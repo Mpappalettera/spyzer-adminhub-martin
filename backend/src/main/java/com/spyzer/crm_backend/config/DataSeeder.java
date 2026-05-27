@@ -58,7 +58,7 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Crear admin solo si aún no existe (evita violación de UNIQUE en re-arranques).
+        // 1. Crear admin base si no existe
         if (administradorRepository.findByEmail("admin@spyzer.com").isEmpty()) {
             administradorRepository.save(Administrador.builder()
                     .nombre("Admin")
@@ -68,14 +68,13 @@ public class DataSeeder implements CommandLineRunner {
                     .rol("ADMIN")
                     .fechaCreacion(LocalDateTime.now())
                     .build());
-            log.info("Admin sembrado.");
-        } else {
-            log.info("Admin ya existe; omitiendo creación.");
+            log.info("Admin base sembrado con éxito.");
         }
 
+        // 2. Cargar el recurso JSON desde el classpath (Resources)
         ClassPathResource jsonResource = new ClassPathResource("crm-export.json");
         if (!jsonResource.exists()) {
-            log.warn("crm-export.json no encontrado en el classpath. Omitiendo importación de datos reales.");
+            log.warn("crm-export.json no encontrado en resources. Omitiendo importación.");
             return;
         }
 
@@ -88,6 +87,7 @@ public class DataSeeder implements CommandLineRunner {
             Map<Integer, Usuario> usuariosMap = new HashMap<>();
             List<Usuario> usuariosGuardados = new ArrayList<>();
 
+            // 3. Importar Usuarios (Evitando duplicar si ya existen por Email)
             if (usersNode != null) {
                 for (JsonNode userNode : usersNode) {
                     int externalId = userNode.get("id").asInt();
@@ -95,8 +95,8 @@ public class DataSeeder implements CommandLineRunner {
                     String[] parts = fullName.split("\\s+", 2);
                     String nombre = parts[0];
                     String apellido = parts.length > 1 ? parts[1] : "";
-
                     String email = userNode.path("email").asText();
+                    
                     String createdAtStr = userNode.path("created_at").asText();
                     LocalDateTime fechaRegistro;
                     try {
@@ -121,8 +121,9 @@ public class DataSeeder implements CommandLineRunner {
                 }
             }
 
-            List<ActividadTrading> actividades = new ArrayList<>();
-            if (transactionsNode != null) {
+            // 4. Importar Transacciones (Solo si la tabla está completamente vacía)
+            if (transactionsNode != null && actividadTradingRepository.count() == 0) {
+                List<ActividadTrading> actividades = new ArrayList<>();
                 for (JsonNode txNode : transactionsNode) {
                     int userId = txNode.get("user_id").asInt();
                     Usuario usuario = usuariosMap.get(userId);
@@ -133,6 +134,7 @@ public class DataSeeder implements CommandLineRunner {
                     String instrumento = txNode.path("symbol").asText("AAPL").toUpperCase();
                     BigDecimal precio = new BigDecimal(txNode.path("precio").asText("0"));
                     BigDecimal cantidad = new BigDecimal(txNode.path("cantidad").asText("0"));
+                    
                     String timestampStr = txNode.path("timestamp").asText();
                     LocalDateTime fechaActividad;
                     try {
@@ -151,9 +153,13 @@ public class DataSeeder implements CommandLineRunner {
                             .build());
                 }
                 actividadTradingRepository.saveAll(actividades);
+                log.info("Se han importado {} transacciones de trading.", actividades.size());
+            } else {
+                log.info("Las transacciones ya existían o el nodo está vacío. Omitiendo.");
             }
 
-            if (!usuariosGuardados.isEmpty()) {
+            // 5. Importar las Reviews ficticias (Solo si la tabla está vacía)
+            if (!usuariosGuardados.isEmpty() && reviewAppRepository.count() == 0) {
                 Random random = new Random(42);
                 List<ReviewApp> reviews = new ArrayList<>();
                 for (int i = 0; i < 20; i++) {
@@ -165,14 +171,11 @@ public class DataSeeder implements CommandLineRunner {
                             .build());
                 }
                 reviewAppRepository.saveAll(reviews);
+                log.info("Se han generado 20 reviews de la aplicación.");
             }
 
-            log.info("Importación completada: 1 admin, {} usuarios, {} actividades de trading, {} reviews.",
-                    usuariosGuardados.size(), actividades.size(),
-                    usuariosGuardados.isEmpty() ? 0 : 20);
-
         } catch (Exception e) {
-            log.error("Error al importar crm-export.json: {}", e.getMessage(), e);
+            log.error("Error crítico en la carga del seeder: {}", e.getMessage(), e);
         }
     }
 }
