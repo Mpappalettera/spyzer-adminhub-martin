@@ -58,10 +58,9 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Candado deshabilitado temporalmente para forzar la siembra en producción.
-        // if (administradorRepository.count() > 0) {
-        //     return;
-        // }
+         if (administradorRepository.count() > 0) {
+             return;
+         }
 
         administradorRepository.save(Administrador.builder()
                 .nombre("Admin")
