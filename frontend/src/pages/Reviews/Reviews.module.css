@@ -1,0 +1,214 @@
+.pageTitle {
+  font-size: var(--headline-sm-size);
+  font-weight: var(--headline-sm-weight);
+  color: var(--on-surface);
+  margin-bottom: var(--space-md);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+/* === Filters === */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.filterPill {
+  padding: 6px 14px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--card-border);
+  font-size: var(--data-mono-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--on-surface-variant);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filterPill:hover {
+  border-color: var(--outline);
+  color: var(--on-surface);
+}
+
+.filterPillActive {
+  composes: filterPill;
+  background-color: var(--primary-container);
+  border-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+.filterPillFlagged {
+  composes: filterPill;
+  gap: var(--space-xs);
+}
+
+/* === Review Cards === */
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.reviewCard {
+  padding: var(--space-md);
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.reviewAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--rounded-full);
+  background: linear-gradient(135deg, var(--surface-container-high), var(--surface-bright));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--data-mono-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--on-surface-variant);
+  flex-shrink: 0;
+}
+
+.reviewInfo {
+  flex: 1;
+}
+
+.reviewName {
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--on-surface);
+}
+
+.reviewTime {
+  font-size: var(--data-mono-size);
+  color: var(--outline);
+  margin-left: var(--space-sm);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.starFilled {
+  color: var(--secondary);
+}
+
+.starEmpty {
+  color: var(--outline-variant);
+}
+
+.reviewText {
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-line);
+  color: var(--on-surface-variant);
+}
+
+/* === Sidebar Stats === */
+.statsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.avgRating {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin: var(--space-sm) 0;
+}
+
+.avgRatingValue {
+  font-size: var(--display-lg-size);
+  font-weight: var(--display-lg-weight);
+  color: var(--on-surface);
+  line-height: 1;
+}
+
+.avgRatingStars {
+  display: flex;
+  gap: 2px;
+}
+
+.avgRatingCount {
+  font-size: var(--data-mono-size);
+  color: var(--outline);
+}
+
+/* Sentiment bars */
+.sentimentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.sentimentLabel {
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-medium);
+  min-width: 70px;
+}
+
+.sentimentPositive { color: var(--gain); }
+.sentimentNeutral { color: var(--primary); }
+.sentimentNegative { color: var(--loss); }
+
+.sentimentBar {
+  flex: 1;
+  height: 6px;
+  background-color: var(--surface-container-high);
+  border-radius: var(--rounded-full);
+  overflow: hidden;
+}
+
+.sentimentFill {
+  height: 100%;
+  border-radius: var(--rounded-full);
+  transition: width var(--transition-slow);
+}
+
+.sentimentValue {
+  font-size: var(--data-mono-size);
+  color: var(--on-surface-variant);
+  font-variant-numeric: tabular-nums;
+  min-width: 32px;
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsPanel {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 640px) {
+  .statsPanel {
+    flex-direction: column;
+  }
+
+  .filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}

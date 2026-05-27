@@ -1,0 +1,56 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--rounded-full);
+  font-size: var(--label-caps-size);
+  font-weight: var(--label-caps-weight);
+  letter-spacing: var(--label-caps-spacing);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.sent {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--gain);
+}
+
+.scheduled {
+  background-color: rgba(174, 198, 255, 0.15);
+  color: var(--primary);
+}
+
+.draft {
+  background-color: rgba(140, 144, 160, 0.15);
+  color: var(--outline);
+}
+
+.moderate {
+  background-color: rgba(140, 144, 160, 0.15);
+  color: var(--outline);
+}
+
+.aggressive {
+  background-color: rgba(255, 84, 81, 0.15);
+  color: var(--tertiary-container);
+}
+
+.conservative {
+  background-color: rgba(78, 222, 163, 0.15);
+  color: var(--secondary);
+}
+
+.positive {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--gain);
+}
+
+.neutral {
+  background-color: rgba(174, 198, 255, 0.15);
+  color: var(--primary);
+}
+
+.negative {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--loss);
+}

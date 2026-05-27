@@ -1,0 +1,30 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layoutCollapsed {
+  --sidebar-width: 64px;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  margin-top: var(--topbar-height);
+  padding: var(--space-lg);
+  min-height: calc(100vh - var(--topbar-height));
+  transition: margin-left var(--transition-normal);
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 0;
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .mainContent {
+    padding: var(--space-sm);
+  }
+}

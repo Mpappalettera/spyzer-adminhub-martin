@@ -1,0 +1,29 @@
+.progressRoot {
+  position: relative;
+  height: 6px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--rounded-full);
+  background-color: var(--surface-container-high);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.progressIndicator {
+  height: 100%;
+  border-radius: var(--rounded-full);
+  transition: width var(--transition-slow);
+}
+
+.trendUp {
+  background-color: var(--gain);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.trendDown {
+  background-color: var(--loss);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.trendNeutral {
+  background-color: var(--outline);
+}

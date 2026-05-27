@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+    /* Cover page template (default for the first page) */
+    @page {
+        size: a4;
+        @frame content_frame {
+            left: 2.2cm;
+            top: 2cm;
+            width: 16.6cm;
+            height: 25.7cm;
+        }
+    }
+    
+    /* Standard template for subsequent pages */
+    @page standard_page {
+        size: a4;
+        @frame header_frame {
+            -pdf-frame-content: header_content;
+            left: 2.2cm;
+            top: 1.2cm;
+            width: 16.6cm;
+            height: 1.2cm;
+        }
+        @frame content_frame {
+            left: 2.2cm;
+            top: 2.8cm;
+            width: 16.6cm;
+            height: 24.4cm;
+        }
+        @frame footer_frame {
+            -pdf-frame-content: footer_content;
+            left: 2.2cm;
+            top: 27.2cm;
+            width: 16.6cm;
+            height: 1.0cm;
+        }
+    }
+    
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: #1e293b;
+        line-height: 1.45;
+        font-size: 9.5pt;
+    }
+    
+    h1, h2, h3, h4 {
+        color: #0f172a;
+        font-weight: bold;
+        margin-top: 16pt;
+        margin-bottom: 8pt;
+    }
+    
+    h1 {
+        font-size: 16pt;
+        border-bottom: 1.5px solid #0b2240;
+        padding-bottom: 4pt;
+        margin-top: 24pt;
+    }
+    
+    h2 {
+        font-size: 12.5pt;
+        border-bottom: 0.5px solid #cbd5e1;
+        padding-bottom: 2pt;
+        color: #0b2240;
+        margin-top: 20pt;
+    }
+    
+    h3 {
+        font-size: 10.5pt;
+        color: #334155;
+        margin-top: 12pt;
+    }
+    
+    blockquote {
+        margin: 12pt 0;
+        padding: 10pt 12pt;
+        border-left: 3px solid #0b2240;
+        background-color: #f8fafc;
+        font-size: 9pt;
+        color: #334155;
+    }
+    
+    blockquote strong {
+        color: #0b2240;
+    }
+
+    p {
+        margin-bottom: 8pt;
+    }
+
+    ul, ol {
+        margin-bottom: 8pt;
+        padding-left: 18pt;
+    }
+    
+    li {
+        margin-bottom: 3.5pt;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12pt 0;
+        font-size: 8.5pt;
+    }
+    
+    th {
+        background-color: #0b2240;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: left;
+        padding: 5pt 7pt;
+        border: 1px solid #0b2240;
+    }
+    
+    td {
+        padding: 5pt 7pt;
+        border: 1px solid #e2e8f0;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+    
+    pre, code {
+        font-family: Courier, monospace;
+        font-size: 8pt;
+        background-color: #f1f5f9;
+    }
+    
+    pre {
+        padding: 8pt;
+        margin: 8pt 0;
+        border: 0.5px solid #cbd5e1;
+    }
+    
+    .cover {
+        text-align: center;
+        margin-top: 0.5cm;
+    }
+    
+    .cover-title {
+        font-size: 20pt;
+        font-weight: bold;
+        color: #0b2240;
+        margin-bottom: 0.8cm;
+        line-height: 1.35;
+    }
+    
+    .cover-subtitle {
+        font-size: 12pt;
+        color: #475569;
+        margin-bottom: 1.2cm;
+        font-weight: normal;
+        font-style: italic;
+    }
+    
+    .cover-details {
+        font-size: 10pt;
+        line-height: 1.8;
+        color: #334155;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 1.2cm;
+        width: 12cm;
+        margin: 0 auto;
+    }
+    
+    #footer_content {
+        text-align: center;
+        font-size: 8pt;
+        color: #64748b;
+        border-top: 0.5px solid #e2e8f0;
+        padding-top: 3pt;
+    }
+    
+    #header_content {
+        vertical-align: middle;
+    }
+</style>
+</head>
+<body>
+
+<!-- Elementos de cabecera y pie de página (fuera del flujo, definidos al principio) -->
+<div id="header_content">
+    <table style="width: 100%; border: none; margin: 0; padding: 0; background-color: transparent;">
+        <tr>
+            <td style="width: 35%; border: none; text-align: left; vertical-align: middle; padding: 0;">
+                <img src="C:\Users\Martin\Proyectos\TFG\crm-backend\backend\logo_centro.png" style="height: 1.0cm; width: auto; display: block;" />
+            </td>
+            <td style="width: 65%; border: none; text-align: right; vertical-align: middle; padding: 0; font-size: 8pt; color: #64748b; font-style: italic;">
+                Documentación Técnica del Ecosistema Spyzer
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="footer_content">
+    Página <pdf:pagenumber> de <pdf:pagecount> - Miguel Melgarejo, Martín Pappaletera, Alex Boca, Carlos
+</div>
+
+<!-- Portada (Página 1: utiliza la plantilla por defecto sin cabecera ni pie) -->
+<div class="cover">
+    <div style="text-align: center; margin-top: 1cm; margin-bottom: 2cm;"><img src="C:\Users\Martin\Proyectos\TFG\crm-backend\backend\logo_centro.png" style="height: 3.8cm; width: auto;" /></div>
+    <div class="cover-title">DESARROLLO DE PLATAFORMA DE SIMULACIÓN FINANCIERA Y SUITE INTEGRADORA: SPYZER</div>
+    <div style="text-align: center; margin-top: 0.8cm; margin-bottom: 2cm;"><img src="C:\Users\Martin\Proyectos\TFG\crm-backend\backend\logo_spyzer.png" style="height: 2.8cm; width: auto;" /></div>
+    <div class="cover-subtitle">Documentación Técnica y Comercial de la Suite Financiera</div>
+    <div class="cover-details">
+        <strong>Autores:</strong> Miguel Melgarejo, Martín Pappaletera, Alex Boca y Carlos<br/>
+        <strong>Fecha de Entrega:</strong> Mayo 2026
+    </div>
+    <pdf:nexttemplate name="standard_page" />
+    <pdf:nextpage />
+</div>
+
+<!-- El contenido del documento fluye a continuación en la plantilla standard_page -->
+<h2>Resumen</h2>
+<p>Spyzer es una suite fintech integrada y diseñada para transformar radicalmente la forma en que los usuarios, inversores y asesores interactúan con los mercados financieros. En lugar de ofrecer herramientas desconectadas, Spyzer unifica tres pilares en una sola experiencia fluida: un <strong>Simulador de Trading en Tiempo Real</strong> para operar y aprender sin riesgos con saldo virtual en índices como el S&amp;P 500, NASDAQ, IBEX 35 y DAX; un <strong>CRM Financiero</strong> pensado para que los asesores patrimoniales coordinen carteras, hagan seguimiento de clientes y dinamicen sus consultas; y un <strong>Analizador de Opiniones (Sentiment Analyzer)</strong> que procesa flujos de información en redes sociales y noticias financieras mediante lenguaje natural para medir el optimismo o temor colectivo de los inversores.</p>
+<p>El motor de la plataforma está construido sobre un backend robusto con <strong>Spring Boot 3.5.6 (Java 21)</strong> que garantiza consistencia transaccional y seguridad sobre <strong>MySQL</strong>. Para eliminar esperas y responder con agilidad a la volatilidad del mercado, el servidor incorpora una capa de caché de alto rendimiento en <strong>Redis</strong> que reduce las consultas de cotizaciones dinámicas a milisegundos. La seguridad se gestiona mediante <strong>Spring Security</strong>, integrando inicio de sesión federado con <strong>Google OAuth2</strong> y autorización persistente basada en tokens <strong>JWT (JSON Web Tokens)</strong>.</p>
+<p>La interfaz web del CRM, desarrollada con <strong>React 19</strong>, implementa una arquitectura responsiva que adapta la experiencia desde el menú lateral expandible en escritorio hasta un sistema de cajón lateral (<em>drawer</em>) activado mediante hamburguesa en móvil. El módulo CRM Admin Hub está construido sobre <strong>Vite 8</strong> y utiliza <strong>Recharts</strong> para los gráficos financieros, <strong>Framer Motion</strong> para las animaciones y <strong>Lottie React</strong> para los iconos animados del sistema de navegación. Todo ello se rige bajo la guía visual <em>Spyzer Design System</em>, caracterizada por una estética oscura premium, efectos de transparencia vidriada (<em>glassmorphism</em>) y una paleta semántica de colores donde el azul eléctrico define las acciones primarias, el verde la salud financiera y el rojo las pérdidas o la inactividad.</p>
+<hr />
+<h2>Abstract</h2>
+<p>Spyzer is a comprehensive fintech suite designed to transform how users, investors, and financial advisors interact with stock markets. Instead of disconnected utilities, Spyzer integrates three core pillars into a single seamless experience: a <strong>Real-Time Trading Simulator</strong> to trade and learn risk-free with virtual balance on indices such as the S&amp;P 500, NASDAQ, IBEX 35, and DAX; a <strong>Financial CRM</strong> built for wealth advisors to manage client portfolios, track performance, and streamline consultation; and an <strong>Opinion and Sentiment Analyzer</strong> that processes financial news and social media streams using natural language processing to gauge market sentiment.</p>
+<p>The platform's engine is powered by an enterprise-grade backend built with <strong>Spring Boot 3.5.6 (Java 21)</strong>, ensuring database transactional consistency and security over <strong>MySQL</strong>. To deliver instant responses in volatile market conditions, the server utilizes a high-speed caching layer with <strong>Redis</strong>, reducing quote retrieval latencies to milliseconds. Backend security is enforced via <strong>Spring Security</strong>, featuring federated single sign-on with <strong>Google OAuth2</strong> and secure request authorization based on self-contained <strong>JWT (JSON Web Tokens)</strong>.</p>
+<p>The CRM Admin Hub web client is built on <strong>React 19</strong> with <strong>Vite 8</strong> as the bundler, implementing a collapsible sidebar architecture that adapts smoothly from a full 256px desktop navigation panel to an off-canvas mobile drawer triggered by a hamburger button. Visually, the platform strictly adheres to the <em>Spyzer Design System</em> reference guide, featuring a premium dark mode with a "Deep Space" black canvas (#131313), elegant <em>glassmorphism</em> transitions through CSS <code>backdrop-filter</code> in the scrollable top bar, and animated Lottie icons throughout the navigation that play on hover to reinforce the premium feel of the interface.</p>
+<hr />
+<h2>1. La Visión y el Origen de Spyzer</h2>
+<p>El acceso al mundo de las inversiones suele presentarse como una barrera intimidante y llena de tecnicismos. Para el usuario que empieza, la falta de experiencia práctica y la velocidad de las cotizaciones se traducen casi siempre en pérdidas. Por otra parte, los asesores financieros siguen lidiando con herramientas de gestión obsoletas que no les permiten conectar con sus clientes en tiempo real, mientras que la enorme cantidad de información generada en redes sociales y noticias satura a cualquiera que intente tomar el pulso del mercado de forma manual.</p>
+<p>Aquí es donde entra <strong>Spyzer</strong>. La visión de esta plataforma es unificar la simulación, la gestión de clientes y el análisis del sentimiento del mercado en una suite única y coherente. Se asume que la única forma de realizar la transición al trading real con confianza es habiendo entrenado antes en un entorno idéntico, respaldado por datos objetivos y asistencia consultiva en tiempo real. </p>
+<p>Para lograrlo, se desarrolló un motor transaccional seguro y escalable con <strong>Spring Boot 3.5.6</strong> y <strong>Java 21</strong>, capaz de soportar operaciones masivas con absoluta precisión matemática sobre <strong>MySQL</strong>. Aceleramos el acceso a las cotizaciones mediante caché inteligente en <strong>Redis</strong> para esquivar latencias de red, y construimos un cliente en <strong>React 19</strong> que no solo es fluido, sino que enamora a primera vista gracias a un diseño en modo oscuro premium, micro-animaciones y transparencias vidriadas que hacen que la plataforma se sienta viva y moderna.</p>
+<hr />
+<h2>2. El Ecosistema Spyzer: Una Suite Financiera Completa</h2>
+<p>Spyzer no es una aplicación de simulación ordinaria; es una suite integrada por tres módulos que se retroalimentan constantemente para crear una sinergia única.</p>
+
+    <table style="width: 100%; border: none; font-size: 9.5pt; margin: 12pt 0; background-color: #f8fafc; text-align: center;">
+      <tr style="background-color: #0b2240; color: white; font-weight: bold;">
+        <td style="border: 1px solid #0b2240; padding: 8pt 4pt; width: 33%;">1. Analizador de Opiniones</td>
+        <td style="border: 1px solid #0b2240; padding: 8pt 4pt; width: 33%;">2. Simulador de Trading</td>
+        <td style="border: 1px solid #0b2240; padding: 8pt 4pt; width: 34%;">3. CRM Financiero</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #e2e8f0; padding: 10pt 8pt; vertical-align: top; background-color: #ffffff;">
+          <span style="font-size: 8pt; color: #475569; line-height: 1.35;">
+            Escucha y procesa streams de texto mediante NLP para obtener el <strong>Índice de Sentimiento</strong>.
+          </span>
+          <div style="font-size: 14pt; color: #0b2240; font-weight: bold; margin-top: 6pt;">&rarr;</div>
+        </td>
+        <td style="border: 1px solid #e2e8f0; padding: 10pt 8pt; vertical-align: top; background-color: #ffffff;">
+          <span style="font-size: 8pt; color: #475569; line-height: 1.35;">
+            Simula operaciones de compra/venta a precio real basándose en cotizaciones dinámicas y alertas.
+          </span>
+          <div style="font-size: 14pt; color: #0b2240; font-weight: bold; margin-top: 6pt;">&rarr;</div>
+        </td>
+        <td style="border: 1px solid #e2e8f0; padding: 10pt 8pt; vertical-align: top; background-color: #ffffff;">
+          <span style="font-size: 8pt; color: #475569; line-height: 1.35;">
+            Centraliza perfiles de inversión y carteras para coordinar el asesoramiento financiero directo.
+          </span>
+          <div style="font-size: 14pt; color: #0b2240; font-weight: bold; margin-top: 6pt;">&larr;</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" style="border: 1px solid #cbd5e1; padding: 8pt; text-align: center; background-color: #f1f5f9; font-size: 8.5pt; color: #475569; line-height: 1.4;">
+          <strong>Flujo del Ecosistema:</strong> Las métricas de sentimiento informan las decisiones de trading del cliente y guían las recomendaciones del asesor del CRM. El historial transaccional del simulador nutre el CRM para auditoría.
+        </td>
+      </tr>
+    </table>
+    
+<h3>2.1. Spyzer Trading Simulator</h3>
+<p>El corazón transaccional de la plataforma. Permite a los usuarios operar con saldo virtual en los principales mercados bursátiles bajo condiciones de cotización en tiempo real. El usuario puede realizar operaciones de compra y venta de forma manual de manera ágil, evaluar sus portafolios y configurar alertas de precios personalizadas para reaccionar al instante ante la volatilidad de los índices.</p>
+<h3>2.2. Spyzer CRM (Customer Relationship Management)</h3>
+<p>Diseñado para que los asesores financieros y gestores de patrimonio coordinen e interactúen con sus clientes. Spyzer CRM centraliza la información financiera en un panel interactivo. Permite a los asesores realizar un seguimiento minucioso del rendimiento de las carteras de sus clientes, sugerir ajustes en sus inversiones simuladas, automatizar informes de rentabilidad periódicos y chatear de manera directa dentro de la plataforma para coordinar estrategias de inversión.</p>
+<h3>2.3. Analizador de Opiniones (Spyzer Sentiment)</h3>
+<p>Una potente herramienta de escucha activa impulsada por Inteligencia Artificial y Procesamiento de Lenguaje Natural (NLP). Este módulo rastrea de forma constante miles de opiniones en redes sociales (como X/Twitter), blogs financieros e hilos de noticias. Al procesar estos textos, calcula un <strong>Índice de Sentimiento</strong> (optimista o pesimista) para cada activo financiero. Esta métrica se muestra directamente en el frontend mediante gráficos interactivos, permitiendo tanto al usuario como a su asesor tomar decisiones de inversión informadas basadas en el humor colectivo del mercado.</p>
+<hr />
+<h2>3. Objetivos del Ecosistema</h2>
+<p>Para consolidar la suite, se definieron las metas fundamentales que rigen el desarrollo de Spyzer:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Meta de la Suite</th>
+<th style="text-align: left;">Estrategia de Consecución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>OBJ-01</strong></td>
+<td style="text-align: left;"><strong>Trading Realista e Instantáneo</strong></td>
+<td style="text-align: left;">Sincronización continua de índices mundiales (S&amp;P 500, NASDAQ, IBEX 35, DAX) con soporte visual dinámico e histórico de velas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OBJ-02</strong></td>
+<td style="text-align: left;"><strong>Centralización de Clientes (CRM)</strong></td>
+<td style="text-align: left;">Panel integrado para que asesores financieros monitoricen saldos, posiciones abiertas y recomienden estrategias personalizadas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OBJ-03</strong></td>
+<td style="text-align: left;"><strong>Análisis de Sentimiento (Sentiment)</strong></td>
+<td style="text-align: left;">Captura, análisis y puntuación en tiempo real del optimismo de la red para mostrarlo gráficamente y predecir tendencias.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OBJ-04</strong></td>
+<td style="text-align: left;"><strong>Sistema de Alertas Dinámicas</strong></td>
+<td style="text-align: left;">Habilitar la creación y ejecución de disparadores de alertas (PRICE_UP, PRICE_DOWN, etc.) que notifiquen al usuario cuando se cumpla la condición.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OBJ-05</strong></td>
+<td style="text-align: left;"><strong>Seguridad de Grado Bancario</strong></td>
+<td style="text-align: left;">Autenticación robusta federada con Google, autorización mediante JWT autocontenidos y protección transaccional ACID en base de datos.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Arquitectura y Stack Tecnológico</h2>
+<p>La suite Spyzer se apoya en una infraestructura cliente-servidor robusta, organizada para separar responsabilidades y garantizar tiempos de respuesta inmediatos.</p>
+<h3>4.1. El Cerebro Tecnológico: Spring Boot 3.5.6 &amp; Java 21</h3>
+<p>El servidor backend gestiona todas las transacciones financieras y algoritmos de la suite en capas independientes:
+* <strong>Persistencia y Entidades (JPA/Hibernate):</strong> Mapeo estricto del portafolio, transacciones, alertas y usuarios sobre <strong>MySQL</strong>, garantizando consistencia ACID para que las compras y ventas de los usuarios y asesores sean completamente seguras y libres de colisiones de saldo.
+* <strong>Seguridad y JWT:</strong> Autenticación a través de <strong>Spring Security</strong> vinculada a <strong>Google OAuth2</strong> y expedición de tokens <strong>JWT</strong> para que el cliente valide de forma segura cada acción de trading o CRM sin comprometer credenciales.
+* <strong>Mitigación de Latencia con Redis:</strong> Las cotizaciones e índices de opinión se guardan en la caché de <strong>Redis</strong> con tiempos de expiración inteligentes, evitando saturar APIs externas y logrando que la aplicación cargue en milisegundos.</p>
+<hr />
+<h3>4.2. El Frontend: React 19 y la Arquitectura del CRM Admin Hub</h3>
+<p>El módulo de interfaz que cubro en esta documentación es el <strong>Spyzer CRM Admin Hub</strong>, la herramienta que los asesores financieros utilizan para gestionar sus clientes, enviar campañas de correo y monitorizar el sentimiento del mercado. Está implementado con <strong>React 19</strong> y empaquetado con <strong>Vite 8</strong>.</p>
+<h4>4.2.1. Stack de dependencias (versiones exactas del <code>package.json</code>)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dependencia</th>
+<th style="text-align: left;">Versión</th>
+<th style="text-align: left;">Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>react</code></td>
+<td style="text-align: left;">^19.2.6</td>
+<td style="text-align: left;">Motor de renderizado de la interfaz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>react-dom</code></td>
+<td style="text-align: left;">^19.2.6</td>
+<td style="text-align: left;">Montaje del árbol React en el DOM del navegador</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>react-router-dom</code></td>
+<td style="text-align: left;">^7.15.1</td>
+<td style="text-align: left;">Enrutamiento SPA con rutas protegidas y públicas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recharts</code></td>
+<td style="text-align: left;">^3.8.1</td>
+<td style="text-align: left;">Gráficos de área y donut para los paneles del CRM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>framer-motion</code></td>
+<td style="text-align: left;">^12.39.0</td>
+<td style="text-align: left;">Animaciones de entrada, salida y transición de estado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lottie-react</code></td>
+<td style="text-align: left;">^2.4.1</td>
+<td style="text-align: left;">Iconos animados en formato Lottie JSON para la navegación</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lucide-react</code></td>
+<td style="text-align: left;">^1.16.0</td>
+<td style="text-align: left;">Biblioteca de iconos SVG para la interfaz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clsx</code></td>
+<td style="text-align: left;">^2.1.1</td>
+<td style="text-align: left;">Composición condicional de clases CSS en componentes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vite</code></td>
+<td style="text-align: left;">^8.0.12</td>
+<td style="text-align: left;">Bundler de desarrollo ultrarrápido con HMR</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@vitejs/plugin-react</code></td>
+<td style="text-align: left;">^6.0.1</td>
+<td style="text-align: left;">Plugin Vite para Fast Refresh de React</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>eslint</code></td>
+<td style="text-align: left;">^10.3.0</td>
+<td style="text-align: left;">Linting estático con reglas específicas para hooks de React</td>
+</tr>
+</tbody>
+</table>
+<h4>4.2.2. Configuración del bundler (Vite)</h4>
+<p>La configuración de Vite (<code>frontend/vite.config.js</code>) declara dos decisiones arquitectónicas importantes: el alias <code>@</code> que apunta a <code>./src</code> para evitar rutas relativas anidadas en los imports, y la apertura automática del navegador en el puerto <code>5173</code> al ejecutar <code>npm run dev</code>:</p>
+<pre><code class="language-js">// frontend/vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    port: 5173,
+    open: true,
+  },
+})
+</code></pre>
+<p>Gracias al alias <code>@</code>, todos los imports internos del proyecto prescinden de rutas como <code>../../components/Card</code> y se escriben directamente como <code>@/components/Card/Card</code>, lo que hace que los archivos sean mucho más fáciles de mover y mantener sin tener que actualizar rutas relativas en cascada.</p>
+<h4>4.2.3. Punto de entrada y árbol de providers</h4>
+<p>El punto de entrada en <code>frontend/src/main.jsx</code> establece la jerarquía de providers que envuelve toda la aplicación. El orden importa: primero <code>BrowserRouter</code> (para que los hooks de Router funcionen en toda la app), luego <code>AuthProvider</code> (para que cualquier componente pueda acceder al contexto de autenticación):</p>
+<pre><code class="language-jsx">// frontend/src/main.jsx
+createRoot(document.getElementById('root')).render(
+  &lt;React.StrictMode&gt;
+    &lt;BrowserRouter&gt;
+      &lt;AuthProvider&gt;
+        &lt;App /&gt;
+      &lt;/AuthProvider&gt;
+    &lt;/BrowserRouter&gt;
+  &lt;/React.StrictMode&gt;,
+)
+</code></pre>
+<p>Los estilos se importan en un orden específico también: primero <code>reset.css</code> (para neutralizar los estilos del navegador), luego <code>tokens.css</code> (las variables CSS del design system) y finalmente <code>global.css</code> (tipografía base y clases utilitarias). Este orden garantiza que las variables ya estén definidas cuando <code>global.css</code> las consume.</p>
+<h4>4.2.4. Sistema de rutas y protección de acceso</h4>
+<p>El árbol de rutas en <code>frontend/src/App.jsx</code> distingue claramente tres categorías: rutas públicas, rutas protegidas con layout, y el fallback de redirección:</p>
+<pre><code class="language-jsx">// frontend/src/App.jsx
+function App() {
+  return (
+    &lt;Routes&gt;
+      {/* Rutas públicas */}
+      &lt;Route path=&quot;/login&quot; element={&lt;Login /&gt;} /&gt;
+      &lt;Route path=&quot;/reviews-form&quot; element={&lt;ReviewsForm /&gt;} /&gt;
+
+      {/* Rutas protegidas: verifican JWT antes de renderizar */}
+      &lt;Route element={&lt;AuthRoute /&gt;}&gt;
+        &lt;Route element={&lt;MainLayout /&gt;}&gt;
+          &lt;Route path=&quot;/&quot; element={&lt;Navigate to=&quot;/dashboard&quot; replace /&gt;} /&gt;
+          &lt;Route path=&quot;/dashboard&quot; element={&lt;Dashboard /&gt;} /&gt;
+          &lt;Route path=&quot;/clients&quot; element={&lt;ClientsList /&gt;} /&gt;
+          &lt;Route path=&quot;/clients/:id&quot; element={&lt;ClientProfile /&gt;} /&gt;
+          &lt;Route path=&quot;/emails&quot; element={&lt;Emails /&gt;} /&gt;
+          &lt;Route path=&quot;/reviews&quot; element={&lt;Reviews /&gt;} /&gt;
+        &lt;/Route&gt;
+      &lt;/Route&gt;
+
+      {/* Fallback global */}
+      &lt;Route path=&quot;*&quot; element={&lt;Navigate to=&quot;/dashboard&quot; replace /&gt;} /&gt;
+    &lt;/Routes&gt;
+  )
+}
+</code></pre>
+<p>La ruta <code>/reviews-form</code> es un caso especial: es una página pública de recogida de valoraciones que el asesor puede enviar como enlace a sus clientes. Al ser pública no pasa por <code>AuthRoute</code> ni por <code>MainLayout</code>, lo que permite que un cliente externo pueda rellenar una reseña sin necesidad de tener credenciales en la plataforma.</p>
+<p>El componente <code>AuthRoute</code> (<code>frontend/src/components/AuthRoute/AuthRoute.jsx</code>) es el guardián de las rutas privadas. Su implementación es deliberadamente mínima: si <code>isAuthenticated</code> es <code>false</code>, redirige a <code>/login</code>. Si es <code>true</code>, renderiza el <code>&lt;Outlet /&gt;</code> y deja que React Router procese el resto del árbol de rutas hijo:</p>
+<pre><code class="language-jsx">// frontend/src/components/AuthRoute/AuthRoute.jsx
+export default function AuthRoute() {
+  const { isAuthenticated } = useAuth()
+  if (!isAuthenticated) {
+    return &lt;Navigate to=&quot;/login&quot; replace /&gt;
+  }
+  return &lt;Outlet /&gt;
+}
+</code></pre>
+<h4>4.2.5. Layout principal y gestión del sidebar</h4>
+<p>El componente <code>MainLayout</code> (<code>frontend/src/layouts/MainLayout/MainLayout.jsx</code>) actúa como el esqueleto visible de todas las páginas protegidas. Mantiene dos estados: <code>sidebarOpen</code> (para el panel lateral en móvil) y <code>sidebarCollapsed</code> (para el modo compacto en escritorio). Al colapsar el sidebar, el token CSS <code>--sidebar-width</code> se sobreescribe a <code>64px</code> mediante la clase <code>.layoutCollapsed</code>, haciendo que el contenido principal se expanda sin necesidad de JavaScript adicional:</p>
+<pre><code class="language-jsx">// frontend/src/layouts/MainLayout/MainLayout.jsx
+export default function MainLayout() {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+
+  return (
+    &lt;div className={`${styles.layout} ${sidebarCollapsed ? styles.layoutCollapsed : ''}`}&gt;
+      &lt;Sidebar 
+        isOpen={sidebarOpen} 
+        onClose={() =&gt; setSidebarOpen(false)} 
+        isCollapsed={sidebarCollapsed}
+        onToggleCollapse={() =&gt; setSidebarCollapsed(!sidebarCollapsed)}
+      /&gt;
+      &lt;TopBar onMenuClick={() =&gt; setSidebarOpen(!sidebarOpen)} /&gt;
+      &lt;main className={styles.mainContent}&gt;
+        &lt;Outlet /&gt;
+      &lt;/main&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<p>El CSS del layout en <code>MainLayout.module.css</code> define el comportamiento responsivo de forma clara: en escritorio el <code>mainContent</code> lleva un <code>margin-left: var(--sidebar-width)</code> para no quedar tapado por el sidebar; por debajo de <code>1024px</code>, ese margen desaparece completamente porque el sidebar pasa a ser un drawer flotante:</p>
+<pre><code class="language-css">/* frontend/src/layouts/MainLayout/MainLayout.module.css */
+.mainContent {
+  flex: 1;
+  margin-left: var(--sidebar-width); /* 256px en desktop */
+  margin-top: var(--topbar-height);  /* 64px */
+  padding: var(--space-lg);
+  transition: margin-left var(--transition-normal);
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 0; /* El sidebar flota como overlay */
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .mainContent {
+    padding: var(--space-sm);
+  }
+}
+</code></pre>
+<h4>4.2.6. Páginas del CRM Admin Hub</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Ruta</th>
+<th style="text-align: left;">Archivo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>/login</code></td>
+<td style="text-align: left;"><code>pages/Login/Login.jsx</code></td>
+<td style="text-align: left;">Inicio de sesión con email y contraseña. Formulario con animación wave en los inputs.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/dashboard</code></td>
+<td style="text-align: left;"><code>pages/Dashboard/Dashboard.jsx</code></td>
+<td style="text-align: left;">Panel principal con KPIs, gráfico de área de registros, estado de usuarios en radial y actividad reciente paginada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/clients</code></td>
+<td style="text-align: left;"><code>pages/ClientsList/ClientsList.jsx</code></td>
+<td style="text-align: left;">Directorio de clientes con buscador y filtros.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/clients/:id</code></td>
+<td style="text-align: left;"><code>pages/ClientProfile/ClientProfile.jsx</code></td>
+<td style="text-align: left;">Perfil detallado de cliente: capital, beneficio, gráfico histórico con selector de período, distribución de cartera y timeline de interacciones.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/emails</code></td>
+<td style="text-align: left;"><code>pages/Emails/Emails.jsx</code></td>
+<td style="text-align: left;">Gestor de campañas de correo: composición, selección de plantilla, historial de envíos con colores por rol de destinatario.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/reviews</code></td>
+<td style="text-align: left;"><code>pages/Reviews/Reviews.jsx</code></td>
+<td style="text-align: left;">Panel de valoraciones de clientes con métricas de sentimiento IA (positivo/neutro/negativo).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/reviews-form</code></td>
+<td style="text-align: left;"><code>pages/ReviewsForm/ReviewsForm.jsx</code></td>
+<td style="text-align: left;">Formulario público de reseña para clientes externos (sin autenticación).</td>
+</tr>
+</tbody>
+</table>
+<h4>4.2.7. Modo mock: desarrollo sin backend</h4>
+<p>El sistema de servicios implementa un patrón de <em>feature flag</em> mediante la variable de entorno <code>VITE_USE_MOCKS</code>. Por defecto —cuando la variable no está definida en el entorno— el flag se activa automáticamente (<code>USE_MOCKS = import.meta.env.VITE_USE_MOCKS !== 'false'</code>), lo que significa que en local el frontend funciona completamente sin backend usando datos estáticos de los archivos en <code>src/mocks/</code>. Esto fue una decisión de ingeniería clave: permitir al equipo de frontend iterar sobre la interfaz de forma independiente y en paralelo al desarrollo del backend de Spring Boot, sin bloqueos ni dependencias de red.</p>
+<p>Para conectar al backend real basta con establecer <code>VITE_USE_MOCKS=false</code> y <code>VITE_API_URL=http://localhost:8080/api</code> en el archivo <code>.env.local</code> del proyecto.</p>
+<hr />
+<h3>4.3. Spyzer Design System: Estética al Servicio de la Finanza</h3>
+<p>El diseño visual de Spyzer Admin Hub está completamente codificado en dos fuentes de verdad que se complementan: el archivo <code>DESIGN.md</code> del repositorio Stitch (que actúa como especificación de diseño) y el archivo <code>frontend/src/styles/tokens.css</code> (que lo traduce a variables CSS listas para usar en los componentes).</p>
+<h4>4.3.1. Filosofía de diseño</h4>
+<p>El sistema de diseño está concebido para un entorno fintech de alto rendimiento, buscando un equilibrio entre la densidad de información de los terminales Bloomberg profesionales y la claridad moderna de las plataformas de trading minoristas. Se habla de "Precisión Institucional": cada píxel tiene un propósito funcional mientras mantiene una estética premium.</p>
+<p>El estilo es <strong>minimalista con un toque glassmórfico</strong>. El modo oscuro profundo reduce la fatiga visual durante sesiones largas de monitoreo. La narrativa visual se centra en la claridad mediante espaciado generoso y una jerarquía de información estricta, para que los movimientos críticos del mercado sean perceptibles de inmediato sin ruido visual.</p>
+<h4>4.3.2. Paleta de colores completa</h4>
+<p>La paleta está anclada en un negro "Deep Space" (#131313 como superficie base, #0e0e0e como fondo más profundo) para crear un lienzo oscuro donde los datos destaquen.</p>
+<pre><code class="language-css">/* frontend/src/styles/tokens.css — extracto comentado */
+:root {
+  /* SUPERFICIES — capas de profundidad por tono */
+  --surface:                  #131313;  /* fondo base del body */
+  --surface-container-lowest: #0e0e0e;  /* el nivel más profundo */
+  --surface-container-low:    #1c1b1b;  /* hover de filas, inputs de tabla */
+  --surface-container:        #20201f;  /* dropdowns, menús contextuales */
+  --surface-container-high:   #2a2a2a;  /* bordes de cards, grid lines */
+  --card-bg:                  #1a1a1a;  /* fondo de todas las tarjetas */
+  --card-border:              #2a2a2a;  /* borde de las tarjetas */
+
+  /* TEXTO */
+  --on-surface:         #e5e2e1;  /* texto principal */
+  --on-surface-variant: #c2c6d7;  /* texto secundario, subtítulos */
+  --outline:            #8c90a0;  /* iconos inactivos, metadatos */
+
+  /* PRIMARIO — Azul Eléctrico: acciones, botones, focal points */
+  --primary:            #aec6ff;  /* azul claro para texto sobre fondo oscuro */
+  --primary-container:  #508dff;  /* azul vibrante para botones, badges activos */
+
+  /* SECUNDARIO — Verde Esmeralda: ganancias, usuarios activos */
+  --secondary:          #4edea3;
+  --secondary-container:#00a572;
+  --gain:               #10b981;  /* variante usada en tablas financieras */
+
+  /* TERCIARIO — Rojo/Coral: pérdidas, errores, inactivos */
+  --tertiary:           #ffb3ad;
+  --tertiary-container: #ff5451;
+  --loss:               #ef4444;  /* variante usada en tablas financieras */
+
+  /* GLOW — efecto de resplandor sobre azul primario */
+  --glow-primary:       rgba(47, 127, 255, 0.2);
+  --shadow-glow:        0px 4px 24px var(--glow-primary);
+}
+</code></pre>
+<p>La distinción entre <code>--gain</code>/<code>--loss</code> y <code>--secondary</code>/<code>--tertiary</code> es intencionada: <code>gain</code> y <code>loss</code> son los colores semánticos de datos financieros (tablas de transacciones, variaciones de precio), mientras que <code>secondary</code> y <code>tertiary</code> son los colores del sistema de diseño para componentes UI (badges, radiales, gráficos de distribución).</p>
+<h4>4.3.3. Glassmorphism: implementación real</h4>
+<p>El efecto glassmórfico es visible principalmente en la <code>TopBar</code> al hacer scroll. Cuando el usuario desplaza la página más de 10px, el componente añade la clase <code>scrolled</code> mediante un event listener, que activa un fondo con <code>backdrop-filter: blur()</code>. Este patrón evita el coste de rendimiento de aplicar el blur siempre y lo activa solo cuando tiene sentido visual:</p>
+<pre><code class="language-css">/* frontend/src/components/TopBar/TopBar.module.css */
+.topbar {
+  position: fixed;
+  top: 0;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--card-border);
+  transition: background-color var(--transition-normal),
+              backdrop-filter var(--transition-normal),
+              border-color var(--transition-normal);
+}
+
+.topbar.scrolled {
+  background-color: rgba(19, 19, 19, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(42, 42, 42, 0.5);
+}
+</code></pre>
+<p>De forma similar, las tarjetas del dashboard muestran un resplandor (<em>glow</em>) azul eléctrico al pasar el ratón sobre ellas. El componente <code>Card</code> implementa la variante <code>hoverable</code> que activa <code>--shadow-glow</code> en hover:</p>
+<pre><code class="language-css">/* frontend/src/components/Card/Card.module.css */
+.card {
+  background-color: var(--card-bg);     /* #1a1a1a */
+  border: 1px solid var(--card-border); /* #2a2a2a */
+  border-radius: var(--rounded-xl);     /* 24px — firma visual del design system */
+  padding: var(--space-md);             /* 24px */
+}
+
+.cardHoverable:hover {
+  box-shadow: var(--shadow-glow); /* 0px 4px 24px rgba(47, 127, 255, 0.2) */
+}
+</code></pre>
+<h4>4.3.4. Tipografía: Inter con figuras tabulares</h4>
+<p>La única familia tipográfica del sistema es <strong>Inter</strong>, importada desde Google Fonts con los pesos 400, 500, 600 y 700. No se usa ninguna fuente monoespaciada separada; en su lugar, la variante <code>data-mono</code> aplica <code>font-variant-numeric: tabular-nums</code> sobre Inter para garantizar que las columnas numéricas en tablas financieras se alineen perfectamente:</p>
+<pre><code class="language-css">/* frontend/src/styles/global.css */
+.data-mono {
+  font-size: var(--data-mono-size);     /* 14px */
+  font-weight: var(--data-mono-weight); /* 500 */
+  font-variant-numeric: tabular-nums;   /* columnas alineadas en tablas */
+}
+</code></pre>
+<p>El sistema define escalas tipográficas con nombres semánticos que facilitan la consistencia: <code>display-lg</code> (48px/700) para los números KPI más grandes, <code>headline-sm</code> (24px/600) para los títulos de sección, <code>body-md</code> (15px/400) para el texto corriente, y <code>label-caps</code> (11px/600 con <code>letter-spacing: 0.08em</code>) para las cabeceras de tablas y etiquetas de sección en mayúsculas.</p>
+<h4>4.3.5. Espaciado y geometría</h4>
+<p>El sistema de espaciado usa como unidad base <strong>8px</strong>, siguiendo la convención estándar de los sistemas de diseño modernos. Los valores derivados son: <code>xs=4px</code>, <code>sm=12px</code>, <code>md=24px</code>, <code>lg=32px</code>, <code>xl=48px</code>. Los corners de las tarjetas principales usan <code>--rounded-xl</code> (24px), que da ese aspecto redondeado y suave que es la firma visual del Admin Hub. Los botones e inputs usan <code>--rounded</code> (8px) para una sensación más compacta.</p>
+<h4>4.3.6. Iconos animados: Lottie en la navegación</h4>
+<p>Una de las decisiones de diseño más llamativas es el uso de <strong>Lottie React</strong> para los iconos de navegación del sidebar. En lugar de iconos SVG estáticos, cada ítem del menú tiene asociado un archivo <code>.json</code> de animación Lottie que solo reproduce su ciclo al hacer hover sobre el elemento. Esto da vida al panel de navegación sin resultar agresivo:</p>
+<pre><code class="language-jsx">// frontend/src/components/Sidebar/Sidebar.jsx
+function NavItemLink({ item, isCollapsed, onClose }) {
+  const lottieRef = useRef(null)
+
+  return (
+    &lt;NavLink
+      to={item.to}
+      onMouseEnter={() =&gt; lottieRef.current?.play()}
+      onMouseLeave={() =&gt; lottieRef.current?.stop()}
+    &gt;
+      &lt;Lottie
+        lottieRef={lottieRef}
+        animationData={item.lottieData}
+        loop={true}
+        autoplay={false}  /* No se reproduce al cargar, solo en hover */
+        className={styles.navLottieIcon}
+      /&gt;
+      &lt;span className={styles.navLabel}&gt;{item.label}&lt;/span&gt;
+    &lt;/NavLink&gt;
+  )
+}
+</code></pre>
+<p>Los archivos Lottie están en <code>frontend/src/assets/lottie/</code> y cubren: dashboard, client, mail, Review, help, exit, notification, analytics, Order History y Pdf.</p>
+<h4>4.3.7. Ticker financiero en la TopBar</h4>
+<p>En la vista de dashboard, la barra superior sustituye el buscador de clientes por un <strong>ticker financiero animado</strong> al estilo Wall Street, construido con el componente <code>LogoLoop</code>. Este componente desplaza horizontalmente una fila de cotizaciones en tiempo real (BTC, ETH, SOL, EUR/USD, GBP/USD) con una máscara de degradado en los extremos para crear la ilusión de un scroll infinito:</p>
+<pre><code class="language-jsx">// frontend/src/components/TopBar/TopBar.jsx
+{showSearch ? (
+  &lt;SearchBar /&gt; // Visible en todas las páginas menos dashboard
+) : (
+  &lt;div style={{ maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)' }}&gt;
+    &lt;LogoLoop logos={tickerItems} speed={40} direction=&quot;left&quot; hoverSpeed={10} scaleOnHover={true} /&gt;
+  &lt;/div&gt;
+)}
+</code></pre>
+<p>La lógica para ocultar el buscador en dashboard es deliberada: en esa vista el asesor necesita el espacio para ver las cotizaciones del mercado de un vistazo, mientras que en el resto de páginas el buscador predictivo de clientes es la herramienta principal.</p>
+<hr />
+<h3>4.4. Arquitectura y Stack Tecnológico del CRM</h3>
+<p>El módulo de CRM financiero de Spyzer se implementa como un microservicio independiente construido sobre <strong>Spring Boot 3.5.14</strong> ejecutado bajo <strong>Java 21 (LTS)</strong>, con persistencia exclusiva en <strong>PostgreSQL 16</strong> mediante el driver oficial <code>org.postgresql.Driver</code> y el dialecto <code>org.hibernate.dialect.PostgreSQLDialect</code>. Esta sección documenta de forma exhaustiva la arquitectura interna, las decisiones de diseño que rigen la capa de persistencia y el catálogo completo de la API REST expuesta al frontend del Admin Hub.</p>
+<h4>A. Infraestructura y Patrón Arquitectónico en Capas</h4>
+<p>El backend del CRM se estructura siguiendo el patrón canónico de <strong>arquitectura en cuatro capas desacopladas</strong>, donde cada estrato cumple una responsabilidad atómica y unidireccional. El flujo transaccional siempre desciende desde la frontera HTTP hacia la base de datos y asciende reconstruido a través de objetos de transferencia:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Capa</th>
+<th style="text-align: left;">Paquete</th>
+<th style="text-align: left;">Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Controller</strong></td>
+<td style="text-align: left;"><code>com.spyzer.crm_backend.controller</code></td>
+<td style="text-align: left;">Recepción de peticiones HTTP, validación declarativa (<code>@Valid</code>), traducción a DTO de entrada y serialización del DTO de salida.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Service</strong></td>
+<td style="text-align: left;"><code>com.spyzer.crm_backend.service[.impl]</code></td>
+<td style="text-align: left;">Lógica de negocio, transaccionalidad (<code>@Transactional</code>), orquestación de repositorios, cálculo de métricas financieras y aplicación de reglas de dominio.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Repository</strong></td>
+<td style="text-align: left;"><code>com.spyzer.crm_backend.repository</code></td>
+<td style="text-align: left;">Acceso a datos mediante <code>JpaRepository&lt;T, ID&gt;</code> con derivación de métodos por convención de nombres y consultas JPQL puntuales.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Entity</strong></td>
+<td style="text-align: left;"><code>com.spyzer.crm_backend.model</code></td>
+<td style="text-align: left;">Mapeo objeto-relacional con anotaciones JPA, restricciones de columna y relaciones de integridad referencial.</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>patrón Data Transfer Object (DTO)</strong> se aplica como medida de <strong>seguridad perimetral</strong>: ningún <code>Controller</code> expone instancias de entidades JPA al cliente. Cada operación define un par <code>*RequestDTO</code> (entrada validada) y <code>*ResponseDTO</code> (proyección de lectura), de forma que campos sensibles como <code>passwordHash</code> de la entidad <code>Administrador</code> jamás abandonan el límite del servicio. Adicionalmente, esta indirección <strong>previene el problema de recursividad cíclica infinita en la serialización JSON de Hibernate</strong>: la relación bidireccional implícita entre <code>Usuario</code> y <code>ActividadTrading</code> (<code>@ManyToOne(fetch = FetchType.LAZY)</code> en el lado propietario) provocaría un bucle de referencia si Jackson intentara serializar la entidad directamente. Al mapear únicamente los identificadores escalares (<code>usuarioId</code>, <code>usuarioNombreCompleto</code>) en el <code>ActividadTradingResponseDTO</code>, se rompe el ciclo y se garantiza una respuesta JSON acotada y determinista.</p>
+<h4>B. Optimización del Rendimiento N+1</h4>
+<p>El endpoint <code>GET /api/usuarios</code> constituye una de las operaciones de mayor coste computacional del CRM, dado que el frontend lo consume al inicializar la vista <code>ClientsList.jsx</code> y requiere mostrar no solo los datos personales del cliente sino también su <strong>capital total</strong> y <strong>beneficio total</strong> consolidados. En una implementación naive, esta vista exigiría desde React <strong>N+1 peticiones HTTP concurrentes</strong> (una al listado y N adicionales al endpoint <code>/metricas</code> por cada cliente), saturando la red y degradando el First Contentful Paint.</p>
+<p>La solución implementada en <code>UsuarioServiceImpl.listarTodos()</code> reestructura el <code>UsuarioResponseDTO</code> para <strong>inyectar dinámicamente las propiedades <code>capitalTotal</code> y <code>beneficioTotal</code> calculadas en el servidor</strong> durante la misma invocación. El servicio precarga la totalidad de las actividades de trading en una única consulta SQL y las agrupa en memoria por <code>usuario.id</code> mediante <code>Collectors.groupingBy</code>, eliminando el patrón anti-pattern N+1 a nivel de capa de persistencia:</p>
+<pre><code class="language-java">// UsuarioServiceImpl.java:236-242
+Map&lt;Long, List&lt;ActividadTrading&gt;&gt; actividadesPorUsuario = actividadTradingRepository.findAll()
+        .stream()
+        .collect(Collectors.groupingBy(a -&gt; a.getUsuario().getId()));
+
+return usuarios.stream()
+        .map(u -&gt; buildDtoEnriquecido(u, actividadesPorUsuario.getOrDefault(u.getId(), List.of()), hace15Dias))
+        .collect(Collectors.toList());
+</code></pre>
+<p>El método auxiliar <code>buildDtoEnriquecido</code> reconstruye en memoria las posiciones netas por instrumento, calcula la liquidez residual a partir del saldo virtual inicial de 50 000,00 USD y materializa <code>capitalTotal = liquidez + valorAcciones</code> y <code>beneficioTotal = ganancia</code> directamente en el DTO. De este modo, el frontend recibe el listado <strong>pre-hidratado</strong> en una sola petición HTTP y las tablas se renderizan instantáneamente sin necesidad de orquestar peticiones secundarias desde el cliente.</p>
+<h4>C. Diccionario de Datos del Esquema Físico (PostgreSQL)</h4>
+<p>La base de datos <code>spyzer_crm</code> se materializa mediante el generador DDL de Hibernate (<code>spring.jpa.hibernate.ddl-auto=update</code>) a partir de las anotaciones JPA del paquete <code>model</code>. A continuación se documenta el esquema físico real con tipos de datos PostgreSQL, restricciones y claves foráneas de integridad referencial.</p>
+<p><strong>Tabla <code>usuarios</code></strong> — entidad central del CRM, representa al cliente final del simulador de trading.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo PostgreSQL</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;"><code>BIGINT</code></td>
+<td style="text-align: left;"><code>PRIMARY KEY</code>, <code>IDENTITY</code></td>
+<td style="text-align: left;">Clave primaria autogenerada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nombre</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Nombre de pila del cliente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>apellido</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Apellido del cliente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>email</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code>, <code>UNIQUE</code></td>
+<td style="text-align: left;">Identificador único de negocio. Validado con <code>@Email</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>telefono</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Teléfono de contacto opcional.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>direccion</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Dirección postal opcional.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fecha_registro</code></td>
+<td style="text-align: left;"><code>TIMESTAMP</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Marca temporal del alta del cliente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ultima_conexion</code></td>
+<td style="text-align: left;"><code>TIMESTAMP</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Última conexión activa, utilizada por el cálculo de segmento.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tabla <code>actividades_trading</code></strong> — libro mayor inmutable de operaciones de compra/venta del simulador.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo PostgreSQL</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;"><code>BIGINT</code></td>
+<td style="text-align: left;"><code>PRIMARY KEY</code>, <code>IDENTITY</code></td>
+<td style="text-align: left;">Identificador secuencial de la operación.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tipo</code></td>
+<td style="text-align: left;"><code>VARCHAR(10)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code>, <code>DEFAULT 'COMPRA'</code></td>
+<td style="text-align: left;">Discriminador de la operación: <code>COMPRA</code> o <code>VENTA</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>instrumento</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Ticker del activo (ej. <code>AAPL</code>, <code>BTC</code>, <code>NVDA</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cantidad</code></td>
+<td style="text-align: left;"><code>NUMERIC(18,8)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Volumen operado con precisión de 8 decimales (admite cripto).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>precio</code></td>
+<td style="text-align: left;"><code>NUMERIC(18,8)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Precio unitario en USD en el instante de la operación.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fecha_actividad</code></td>
+<td style="text-align: left;"><code>TIMESTAMP</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Marca temporal del trade.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>notas</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Comentario libre del asesor.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>usuario_id</code></td>
+<td style="text-align: left;"><code>BIGINT</code></td>
+<td style="text-align: left;"><code>NOT NULL</code>, <code>FK → usuarios(id)</code></td>
+<td style="text-align: left;">Relación <code>@ManyToOne</code> propietaria del trade.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tabla <code>reviews_app</code></strong> — valoraciones de la aplicación con análisis de sentimiento posterior por IA.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo PostgreSQL</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;"><code>BIGINT</code></td>
+<td style="text-align: left;"><code>PRIMARY KEY</code>, <code>IDENTITY</code></td>
+<td style="text-align: left;">Identificador de la reseña.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>usuario_id</code></td>
+<td style="text-align: left;"><code>BIGINT</code></td>
+<td style="text-align: left;"><code>NOT NULL</code>, <code>FK → usuarios(id)</code></td>
+<td style="text-align: left;">Autor de la valoración.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>calificacion_estrellas</code></td>
+<td style="text-align: left;"><code>INTEGER</code></td>
+<td style="text-align: left;"><code>NOT NULL</code>, validado <code>1..5</code></td>
+<td style="text-align: left;">Puntuación numérica (<code>@Min(1) @Max(5)</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>comentario</code></td>
+<td style="text-align: left;"><code>TEXT</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Texto libre del usuario sin límite práctico.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sentimiento_ia</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Resultado del clasificador externo (POSITIVO/NEUTRO/NEGATIVO).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fecha</code></td>
+<td style="text-align: left;"><code>TIMESTAMP</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Marca temporal del envío.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tabla <code>campanas_email</code></strong> — registro histórico de las campañas de marketing emitidas desde el Admin Hub.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo PostgreSQL</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;"><code>BIGINT</code></td>
+<td style="text-align: left;"><code>PRIMARY KEY</code>, <code>IDENTITY</code></td>
+<td style="text-align: left;">Identificador de la campaña.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>publico_objetivo</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Segmento al que se dirige (<code>ACTIVO</code>, <code>VIP</code>, <code>INACTIVO</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>asunto</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Subject del correo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cuerpo</code></td>
+<td style="text-align: left;"><code>TEXT</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Plantilla HTML/texto del correo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>destinatarios</code></td>
+<td style="text-align: left;"><code>TEXT</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Lista CSV de emails resueltos en el envío.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fecha_envio</code></td>
+<td style="text-align: left;"><code>TIMESTAMP</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Instante real del envío SMTP.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>estado</code></td>
+<td style="text-align: left;"><code>VARCHAR(20)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Enum <code>BORRADOR \| PROGRAMADA \| ENVIADA</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tabla <code>administradores</code></strong> — operadores autenticados del CRM (asesores y staff interno).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Columna</th>
+<th style="text-align: left;">Tipo PostgreSQL</th>
+<th style="text-align: left;">Restricciones</th>
+<th style="text-align: left;">Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;"><code>BIGINT</code></td>
+<td style="text-align: left;"><code>PRIMARY KEY</code>, <code>IDENTITY</code></td>
+<td style="text-align: left;">Identificador del administrador.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nombre</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Nombre del operador.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>apellido</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Apellido del operador.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>email</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code>, <code>UNIQUE</code></td>
+<td style="text-align: left;">Credencial de login.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>password_hash</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Hash BCrypt de la contraseña, nunca expuesto vía DTO.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>rol</code></td>
+<td style="text-align: left;"><code>VARCHAR(255)</code></td>
+<td style="text-align: left;"><code>NOT NULL</code></td>
+<td style="text-align: left;">Rol funcional (<code>ADMIN</code>, <code>ASESOR</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fecha_creacion</code></td>
+<td style="text-align: left;"><code>TIMESTAMP</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Alta del operador.</td>
+</tr>
+</tbody>
+</table>
+<h4>D. Mecanismos Avanzados del Motor de Persistencia</h4>
+<p>La generación de claves primarias se delega al motor mediante <code>@GeneratedValue(strategy = GenerationType.IDENTITY)</code>, que en PostgreSQL se traduce internamente a la creación automática de una <strong><code>SEQUENCE</code></strong> asociada a cada columna <code>BIGINT</code>. A diferencia de <code>GenerationType.SEQUENCE</code> con <code>allocationSize</code> configurable, la estrategia <code>IDENTITY</code> apoyada sobre <code>GENERATED BY DEFAULT AS IDENTITY</code> garantiza que cada <code>INSERT</code> consulte de forma atómica el siguiente valor del <em>sequence object</em> a través de una llamada <code>nextval()</code> administrada por el propio motor, asegurando la <strong>asignación concurrente y libre de colisiones</strong> de identificadores incluso bajo carga transaccional simultánea proveniente de múltiples sesiones JDBC.</p>
+<p>Por su parte, las consultas de los buscadores generales del CRM se apoyan en <strong>índices B-Tree en disco</strong> para evitar el coste de un <em>Full Table Scan</em>. PostgreSQL crea automáticamente un índice B-Tree para cada columna marcada con la restricción <code>UNIQUE</code>, lo que acelera de forma logarítmica las búsquedas implementadas en <code>UsuarioRepository</code>:</p>
+<pre><code class="language-java">// UsuarioRepository.java:14-22
+Optional&lt;Usuario&gt; findByEmail(String email);
+boolean existsByEmail(String email);
+List&lt;Usuario&gt; findByNombreContainingIgnoreCaseOrApellidoContainingIgnoreCase(String nombre, String apellido);
+</code></pre>
+<p>Las consultas <code>findByEmail</code> y <code>existsByEmail</code> resuelven en <code>O(log n)</code> gracias al índice implícito sobre <code>usuarios.email</code>. La búsqueda predictiva del Admin Hub (<code>findByNombreContainingIgnoreCase…</code>) genera una cláusula <code>LIKE '%query%'</code> sobre <code>nombre</code> y <code>apellido</code>, escenario para el cual se documenta como mejora futura la creación de un índice <strong>GIN/<code>pg_trgm</code></strong> que permita aceleración de coincidencias parciales sin recurrir a un escaneo secuencial completo de la relación.</p>
+<h4>E. Catálogo e Inventario de la API REST del CRM</h4>
+<p>La siguiente tabla enumera de forma exhaustiva el conjunto de endpoints HTTP expuestos por el backend del CRM, extraídos directamente de las anotaciones <code>@RequestMapping</code> de los controladores en <code>src/main/java/com/spyzer/crm_backend/controller/</code>. Todos los endpoints están protegidos por el filtro <code>JwtAuthFilter</code> salvo el flujo público de autenticación.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Ruta Completa</th>
+<th style="text-align: left;">Parámetros de entrada</th>
+<th style="text-align: left;">DTO de respuesta</th>
+<th style="text-align: left;">Propósito funcional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/api/auth/register</code></td>
+<td style="text-align: left;"><code>@RequestBody AdminRegistroRequestDTO</code></td>
+<td style="text-align: left;"><code>AdminResponseDTO</code></td>
+<td style="text-align: left;">Alta de un nuevo operador del CRM con BCrypt y rol asignado.</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/api/auth/login</code></td>
+<td style="text-align: left;"><code>@RequestBody LoginRequestDTO</code></td>
+<td style="text-align: left;"><code>LoginResponseDTO</code></td>
+<td style="text-align: left;">Autenticación de administrador; devuelve token JWT firmado en HS256.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>List&lt;UsuarioResponseDTO&gt;</code></td>
+<td style="text-align: left;">Listado pre-hidratado de clientes con <code>capitalTotal</code> y <code>beneficioTotal</code> calculados.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios/buscar</code></td>
+<td style="text-align: left;"><code>@RequestParam("query") String</code></td>
+<td style="text-align: left;"><code>List&lt;UsuarioResponseDTO&gt;</code></td>
+<td style="text-align: left;">Buscador predictivo por nombre/apellido del Admin Hub.</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/api/usuarios</code></td>
+<td style="text-align: left;"><code>@RequestBody UsuarioRequestDTO</code></td>
+<td style="text-align: left;"><code>UsuarioResponseDTO</code> (201)</td>
+<td style="text-align: left;">Registro de un cliente nuevo desde el CRM.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PUT</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code>, <code>@RequestBody UsuarioRequestDTO</code></td>
+<td style="text-align: left;"><code>UsuarioResponseDTO</code></td>
+<td style="text-align: left;">Actualización de datos personales del cliente (modal <code>EditUserModal</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code></td>
+<td style="text-align: left;"><code>UsuarioResponseDTO</code></td>
+<td style="text-align: left;">Recuperación completa del perfil para <code>ClientProfile.jsx</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios/email/{email}</code></td>
+<td style="text-align: left;"><code>@PathVariable String email</code></td>
+<td style="text-align: left;"><code>UsuarioResponseDTO</code></td>
+<td style="text-align: left;">Búsqueda alternativa por email único.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PATCH</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}/ultima-conexion</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code></td>
+<td style="text-align: left;"><code>UsuarioResponseDTO</code></td>
+<td style="text-align: left;">Actualiza <code>ultima_conexion</code> para el cálculo de segmento.</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}/segmentos/procesar</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code></td>
+<td style="text-align: left;"><code>UsuarioResponseDTO</code></td>
+<td style="text-align: left;">Recalcula y devuelve el segmento (<code>INACTIVO</code>/<code>ACTIVO</code>/<code>VIP</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}/actividades</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code></td>
+<td style="text-align: left;"><code>List&lt;ActividadRecienteDTO&gt;</code></td>
+<td style="text-align: left;">Timeline combinado de operaciones de trading y correos recibidos.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}/metricas</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code></td>
+<td style="text-align: left;"><code>MetricasFinancierasDTO</code></td>
+<td style="text-align: left;">KPIs financieros: invertido, liquidez, valor cartera, P&amp;L, distribución.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}/historial-capital</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code>, <code>@RequestParam(defaultValue="6M") String period</code></td>
+<td style="text-align: left;"><code>List&lt;HistorialCapitalDTO&gt;</code></td>
+<td style="text-align: left;">Serie temporal del capital total por período (<code>1M</code>, <code>3M</code>, <code>6M</code>, <code>1Y</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/usuarios/{id}/export-pdf</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code></td>
+<td style="text-align: left;"><code>byte[]</code> (<code>application/pdf</code>)</td>
+<td style="text-align: left;">Ficha PDF del cliente generada con OpenPDF 1.3.30.</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/api/actividades</code></td>
+<td style="text-align: left;"><code>@RequestBody ActividadTradingRequestDTO</code></td>
+<td style="text-align: left;"><code>ActividadTradingResponseDTO</code> (201)</td>
+<td style="text-align: left;">Registra una operación <code>COMPRA</code>/<code>VENTA</code> con validación financiera.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/campanas</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>List&lt;CampanaEmailResponseDTO&gt;</code></td>
+<td style="text-align: left;">Histórico de campañas de email del módulo de marketing.</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/api/campanas</code></td>
+<td style="text-align: left;"><code>@RequestBody CampanaEmailRequestDTO</code></td>
+<td style="text-align: left;"><code>CampanaEmailResponseDTO</code> (201)</td>
+<td style="text-align: left;">Creación y envío SMTP de una campaña al segmento objetivo.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/campanas/plantillas</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>List&lt;Map&lt;String,String&gt;&gt;</code></td>
+<td style="text-align: left;">Plantillas predefinidas (Bienvenida, Reactivación, VIP).</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/api/reviews</code></td>
+<td style="text-align: left;"><code>@RequestBody ReviewAppRequestDTO</code></td>
+<td style="text-align: left;"><code>ReviewAppResponseDTO</code> (201)</td>
+<td style="text-align: left;">Registro de reseña pública desde <code>ReviewsForm.jsx</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/reviews</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>List&lt;ReviewAppResponseDTO&gt;</code></td>
+<td style="text-align: left;">Listado de valoraciones para el panel <code>Reviews.jsx</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PATCH</td>
+<td style="text-align: left;"><code>/api/reviews/{id}/analisis</code></td>
+<td style="text-align: left;"><code>@PathVariable Long id</code>, <code>@RequestBody AnalisisIaRequestDTO</code></td>
+<td style="text-align: left;"><code>ReviewAppResponseDTO</code></td>
+<td style="text-align: left;">Inserta el resultado del clasificador IA externo.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/stats/actividades/ultimas-24h</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>ResumenActividad24hDTO</code></td>
+<td style="text-align: left;">Resumen de operaciones de las últimas 24 horas.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/stats/usuarios/por-mes</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>List&lt;RegistroMensualDTO&gt;</code></td>
+<td style="text-align: left;">Agregación de registros agrupados por año/mes vía JPQL.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/stats/actividad-reciente</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>List&lt;ActividadRecienteDTO&gt;</code></td>
+<td style="text-align: left;">Feed de eventos recientes para el dashboard.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/stats/instrumentos</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>Map&lt;String, BigDecimal&gt;</code></td>
+<td style="text-align: left;">Catálogo de instrumentos con precio de referencia.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/stats/kpis</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>KpisDashboardDTO</code></td>
+<td style="text-align: left;">KPIs agregados de la plataforma (usuarios, operaciones, volumen).</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/stats/reviews</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>ReviewsEstadisticasDTO</code></td>
+<td style="text-align: left;">Nota promedio y desglose por sentimiento de IA.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/api/stats/export</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><code>byte[]</code> (<code>application/pdf</code>)</td>
+<td style="text-align: left;">Exporta el informe consolidado del dashboard como PDF.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>4.5. Arquitectura e Integración del Analizador de Opiniones</strong></p>
+<p><strong>[ZONA DE COLABORACIÓN: SECCIÓN RESERVADA PARA EL DESARROLLO DEL ANALIZADOR DE SENTIMIENTO]</strong><br />
+<em>Instrucciones para el redactor encargado:</em><br />
+* En esta sección debes detallar la ingeniería detrás del analizador de opiniones (Sentiment Analyzer).
+* Explica el mecanismo de captura de información (scrapers, APIs de redes sociales o streams de noticias), el modelo de lenguaje o biblioteca NLP utilizada para la clasificación de sentimiento (Positivo / Negativo / Neutro).
+* Detalla cómo se integran las puntuaciones calculadas con la caché de Redis y los controladores de Spring Boot para exponer las series temporales de sentimiento representadas en los gráficos de Recharts.</p>
+<p><em>--- Elimina esta guía una vez redactado tu contenido ---</em></p>
+</blockquote>
+<hr />
+<h2>5. Desafíos Técnicos Resueltos</h2>
+<p>Poner en marcha una suite fintech de estas dimensiones planteó retos tecnológicos de alta complejidad:</p>
+<ol>
+<li><strong>La consistencia de las Transacciones Financieras en Tiempo Real:</strong> En un simulador financiero de alta frecuencia, cada operación debe ejecutarse de forma atómica. Se diseñó un servicio que, bajo transacciones aisladas, verifica el saldo disponible del usuario, realiza la simulación del trade a precio actual y liquida y actualiza en un solo paso la base de datos MySQL, registrando el movimiento en el historial.</li>
+<li><strong>Agregación y Procesamiento de Opiniones (Sentiment) sin Bloqueos:</strong> El analizador de opiniones procesa constantemente streams de texto de redes sociales. Para evitar cuellos de botella en el servidor principal, el análisis NLP y el cálculo del Índice de Sentimiento se procesan en tareas asíncronas desacopladas del flujo transaccional principal, guardando la puntuación calculada en Redis para que el motor de visualización de gráficos pueda consultarlo al instante sin latencia.</li>
+<li><strong>Coordinación CRM-Simulador:</strong> El CRM necesita actualizar el valor patrimonial de los clientes en tiempo real. En lugar de realizar consultas continuas e ineficientes a la base de datos, el CRM aprovecha las cotizaciones calientes de la caché de Redis para calcular al vuelo el valor de mercado actual de todas las posiciones de la cartera del cliente cuando el asesor accede al panel.</li>
+<li><strong>Desarrollo Frontend Desacoplado del Backend:</strong> Mantener el ritmo de iteración del frontend sin bloquear su avance esperando que cada endpoint del backend estuviera disponible fue un reto real de coordinación. La solución fue implementar un sistema de mocks activable por variable de entorno (<code>VITE_USE_MOCKS</code>). Cada servicio evalúa el flag en tiempo de ejecución y desvía las peticiones a datos estáticos. Esto permitió que la interfaz visual y la lógica de integración se desarrollaran en paralelo, acortando considerablemente los tiempos de entrega de cada iteración.</li>
+<li><strong>Consistencia Numérica Internacional en la Interfaz:</strong> Al integrar los datos reales del backend, se detectó que los valores numéricos se mostraban sin decimales o con el separador incorrecto en algunos contextos. La solución fue estandarizar toda la presentación de valores monetarios mediante <code>Intl.NumberFormat('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })</code> tanto en los componentes de la interfaz como en el mapeo de las respuestas de los servicios, garantizando que un valor como <code>50000.5</code> siempre se muestre como <code>50.000,50</code> independientemente del contexto.</li>
+</ol>
+<hr />
+<h2>6. Casos de Uso del Ecosistema</h2>
+<p>A continuación se detallan los principales flujos y casos de uso interactivos de la suite, expuestos bajo el formato de tabla formal del documento de referencia.</p>
+<h3>RF-01: Registro e Inicio de Sesión de Usuario (Google OAuth2)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-05</strong> (Seguridad de Grado Bancario)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">El sistema registra de manera ágil y segura al usuario usando su cuenta de Google, inicializando su saldo virtual de simulación por defecto.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario no debe estar autenticado en la plataforma y debe contar con una cuenta de Google activa.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El usuario entra a la Landing Page y pulsa en "Iniciar sesión con Google".<br><strong>2.</strong> El frontend redirige al flujo seguro de Google OAuth2.<br><strong>3.</strong> El usuario introduce sus credenciales en Google y concede los permisos de perfil.<br><strong>4.</strong> Google devuelve un código de acceso redireccionado de forma segura al endpoint del backend.<br><strong>5.</strong> El backend procesa el código, crea el registro en la tabla de usuarios si es la primera vez (inicializando su balance de simulación en $50,000.00) y genera el token JWT.<br><strong>6.</strong> El frontend recibe la respuesta JSON con <code>{ token, nombre, rol, email }</code>, almacena el JWT en <code>localStorage</code> bajo la clave <code>spyzer_token</code> y los datos del usuario bajo <code>spyzer_user</code>, actualiza el estado global de <code>AuthContext</code> y redirige automáticamente a <code>/dashboard</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">El usuario cuenta con una sesión iniciada segura y tiene acceso inmediato a todas las funciones de la suite.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;"><strong>Paso 3:</strong> Si el usuario cancela la autenticación en Google, el sistema aborta el flujo y lo devuelve a la Landing Page informando del suceso.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Implementación Frontend</strong></td>
+<td style="text-align: left;">El flujo de login en el CRM Admin Hub pasa por <code>Login.jsx</code> → <code>useAuth().login()</code> → <code>authService.login()</code> → POST <code>/api/auth/login</code>. El <code>AuthContext</code> persiste la sesión en <code>localStorage</code> y la expone globalmente. <code>AuthRoute.jsx</code> protege el árbol de rutas privadas y redirige a <code>/login</code> si <code>isAuthenticated === false</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-02: Consulta de Datos de Mercado y Sentimiento</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-01</strong> (Trading Realista), <strong>OBJ-03</strong> (Análisis de Sentimiento)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">El usuario visualiza la cotización bursátil actual junto al gráfico interactivo del Índice de Sentimiento derivado del análisis de opiniones.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario debe estar autenticado con sesión activa (JWT válido).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El usuario entra a la sección de "Trading".<br><strong>2.</strong> El frontend realiza una petición HTTP GET al endpoint <code>/api/market-data/{symbol}</code> pasando el JWT.<br><strong>3.</strong> El backend busca el precio actual del activo y su Índice de Sentimiento en la caché de Redis.<br><strong>4.</strong> Si los datos no están en caché, el backend los recupera de la API de mercado y del agregador de opiniones, actualiza Redis y responde al cliente.<br><strong>5.</strong> El frontend recibe el JSON consolidado.<br><strong>6.</strong> React dibuja de forma interactiva el gráfico de velas con <code>lightweight-charts</code> y el gráfico de sentimiento social con <code>recharts</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">El usuario visualiza el estado financiero del activo y la opinión pública en tiempo real sobre el mismo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;"><strong>Paso 4:</strong> Si falla el canal de mercado externo, el sistema utiliza los últimos datos guardados de forma persistente y avisa en pantalla que se muestran datos históricos recientes.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-03: Operación de Compra (Trading Simulator)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-01</strong>, <strong>OBJ-05</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">Permite al usuario comprar participaciones de índices/acciones utilizando el balance de su cuenta simulada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario debe poseer saldo suficiente en su <code>balanceActual</code> para cubrir el importe de la operación al precio actual.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> En el panel de trading, el usuario ingresa la cantidad de títulos y pulsa en "Comprar".<br><strong>2.</strong> El frontend valida que la cantidad sea correcta y envía una petición POST a <code>/api/trading/buy</code>.<br><strong>3.</strong> El backend abre una transacción aislada, comprueba que el saldo del usuario cubra la compra al precio del mercado.<br><strong>4.</strong> Descuenta el total del <code>balanceActual</code> del usuario.<br><strong>5.</strong> Crea o actualiza la posición en <code>portfolio</code>, recalculando de forma automática el precio medio de compra.<br><strong>6.</strong> Registra el movimiento en <code>transactions</code> con tipo <code>BUY</code> e historial correspondiente.<br><strong>7.</strong> El servidor confirma el éxito de la compra y actualiza los balances del portafolio en el frontend.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">Se añade la posición al portafolio del usuario, se descuenta el saldo correspondiente de su balance y se registra en su historial.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;"><strong>Paso 3:</strong> Si el costo de la operación supera el saldo del balance del usuario, la transacción se revierte (Rollback) y se devuelve un error HTTP 400 "Saldo insuficiente para la compra".</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-04: Operación de Venta (Trading Simulator)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-01</strong>, <strong>OBJ-05</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">Permite liquidar posiciones de activos existentes para obtener ganancias o asumir pérdidas simuladas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario debe disponer de una posición abierta del activo en su <code>portfolio</code> con cantidad suficiente para la venta.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El usuario indica la cantidad a vender del activo y hace clic en "Vender".<br><strong>2.</strong> El frontend transmite la orden vía POST al endpoint <code>/api/trading/sell</code>.<br><strong>3.</strong> El backend inicia una transacción controlada y verifica que la cantidad a vender no supere los títulos del portafolio del usuario.<br><strong>4.</strong> Resta los títulos de la posición de portafolio y, si la cantidad restante llega a cero, elimina la fila de la tabla <code>portfolio</code>.<br><strong>5.</strong> Calcula el importe obtenido de la venta (<code>cantidad * precio_actual</code>) y lo suma al <code>balanceActual</code> del usuario.<br><strong>6.</strong> Genera el registro de la transacción en MySQL como tipo <code>SELL</code> en el historial.<br><strong>7.</strong> Confirma al cliente React el éxito de la venta para actualizar los saldos en pantalla.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">Se reduce o elimina la posición del portafolio, se suma el saldo líquido obtenido al balance del usuario y se archiva en transacciones.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;"><strong>Paso 3:</strong> Si el usuario intenta vender una cantidad mayor a la que dispone en cartera, se aborta la venta y el backend responde con error de validación.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-05: Monitorización de Clientes en CRM Financiero</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-02</strong> (Gestión de Portafolio), <strong>OBJ-05</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">Un asesor financiero consulta la evolución del portafolio y los rendimientos agregados de un cliente asignado en el CRM.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El asesor debe disponer de credenciales válidas y el usuario analizado debe estar vinculado a su cartera de clientes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El asesor accede a la pestaña "Clientes" desde el sidebar del Admin Hub.<br><strong>2.</strong> <code>ClientsList.jsx</code> hace GET a <code>/api/usuarios</code> a través de <code>clientService.getClients()</code>. La respuesta mapea <code>estadoUsuario</code> a <code>accountStatus</code> ('Active'/'Inactive'/'VIP') y <code>capitalTotal</code> al campo normalizado <code>totalCapitalInvested</code>.<br><strong>3.</strong> El asesor localiza al cliente con el buscador predictivo de la <code>TopBar</code> (busca por nombre, apellido o email en tiempo real) y hace clic en su fila.<br><strong>4.</strong> <code>ClientProfile.jsx</code> recibe el <code>id</code> del cliente vía <code>useParams()</code> y lanza tres peticiones paralelas: GET <code>/api/usuarios/:id</code>, GET <code>/api/usuarios/:id/metricas</code> y GET <code>/api/usuarios/:id/actividades</code>.<br><strong>5.</strong> Las métricas (<code>distribucionCarteraPorcentaje</code>, <code>gananciaPerdida</code>, <code>liquidezActual</code>) se mapean a la estructura de gráficos. El historial de actividades se transforma en el timeline de interacciones.<br><strong>6.</strong> <code>Recharts</code> renderiza el gráfico de área de evolución de capital con selector de período (1D, 1S, 1M, 6M, 1A, ALL).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">El asesor financiero visualiza con precisión el rendimiento patrimonial de su cliente para formular recomendaciones tácticas de inversión.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;"><strong>Paso 4:</strong> Si alguna de las peticiones falla, los catch individuales devuelven <code>null</code> o <code>[]</code> y el componente renderiza el resto de la información sin romperse. Si el asesor intenta consultar un ID de cliente sin acceso, Spring Security bloquea la petición devolviendo HTTP 403.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-06: Creación y Gestión de Alertas de Precios</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-04</strong> (Sistema de Alertas Dinámicas)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">El usuario programa alertas automáticas para que el sistema avise en pantalla si un activo cruza cierto valor límite.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario debe estar autenticado en la plataforma.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El usuario entra al apartado "Mis Alertas" en el menú superior.<br><strong>2.</strong> Rellena el formulario indicando el activo, el tipo de condición (<code>PRICE_UP</code> o <code>PRICE_DOWN</code>), el precio de trigger y un mensaje personalizado opcional.<br><strong>3.</strong> Pulsa en "Crear Alerta" y el frontend envía los datos vía POST a <code>/api/alerts</code>.<br><strong>4.</strong> El backend registra la alerta en MySQL en estado activa y sin disparar.<br><strong>5.</strong> El frontend recibe la confirmación y refresca el listado dinámico de alertas activas, permitiendo pausarlas o borrarlas con un clic.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">La alerta queda persistida y activa en el servidor, lista para ser evaluada contra los flujos de mercado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;"><strong>Paso 3:</strong> Si se ingresa un precio de trigger igual o inferior a cero, el backend rechaza la creación y el frontend solicita corregir el campo de precio.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-07: Consulta y Gestión del Historial de Transacciones</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-02</strong> (Gestión de Portafolio), <strong>OBJ-05</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">El usuario o su asesor financiero consultan el historial completo de operaciones de compra y venta realizadas para realizar auditorías o analizar rentabilidad.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario debe estar autenticado o disponer de permisos de asesor en el CRM para consultar dicho historial.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El asesor accede al perfil de un cliente en <code>/clients/:id</code>.<br><strong>2.</strong> El componente <code>ClientProfile.jsx</code> carga automáticamente el historial de actividades desde <code>/api/usuarios/:id/actividades</code>.<br><strong>3.</strong> El backend autentica la petición vía JWT e intercepta en el header <code>Authorization: Bearer {token}</code> a través del helper <code>request()</code> en <code>api.js</code>.<br><strong>4.</strong> Las actividades recibidas (tipo <code>TRADING</code>, <code>EMAIL</code>, <code>REVIEW</code>) se mapean a entradas del timeline con título traducido, fecha localizada (<code>toLocaleDateString('es-ES')</code>) y descripción con valores numéricos formateados a <code>es-ES</code>.<br><strong>5.</strong> El timeline se renderiza en orden cronológico inverso, mostrando compras, ventas y eventos de registro de cuenta.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">El asesor obtiene una visión clara e inalterable de todos los movimientos históricos del cliente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;"><strong>Paso 2:</strong> Si la petición a <code>/actividades</code> falla, el <code>.catch(() =&gt; [])</code> devuelve un array vacío y el timeline simplemente no muestra entradas, sin crashear la vista.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-08: Gestión de Campañas de Email (CRM)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-02</strong> (CRM), <strong>OBJ-03</strong> (Análisis de Sentimiento)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">El asesor financiero redacta y envía campañas de correo masivas a segmentos de clientes desde el módulo Emails del Admin Hub.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El asesor debe estar autenticado de forma activa en el panel CRM.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El asesor accede a "Envío correos" desde el sidebar.<br><strong>2.</strong> <code>Emails.jsx</code> carga las plantillas disponibles vía <code>emailService.getEmailTemplates()</code> → GET <code>/api/campanas/plantillas</code>.<br><strong>3.</strong> El asesor selecciona una plantilla (que incluye un enlace CTA de reseña generado automáticamente), configura el asunto, selecciona el rol de los destinatarios (con colores diferenciados: blanco=base, verde=activos, azul=VIP, rojo=inactivos) y pulsa enviar.<br><strong>4.</strong> El frontend envía la campaña vía POST a <code>/api/campanas</code> con <code>emailService.sendCampaign()</code>.<br><strong>5.</strong> El historial de campañas se actualiza en la vista mostrando el estado (<code>SENT</code>, <code>PENDING</code>) y el número de destinatarios.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">La campaña queda registrada en el backend y se envía a los destinatarios del segmento seleccionado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;">Si el canal SMTP falla momentáneamente, el backend gestiona la cola de envío y el frontend muestra el estado <code>PENDING</code> hasta la confirmación.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-09: Recepción de Notificaciones de Triggers en Tiempo Real</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-04</strong> (Sistema de Alertas Dinámicas)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">El sistema procesa las cotizaciones actuales y notifica de inmediato al usuario en pantalla cuando una de sus alertas salta.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario debe tener al menos una alerta registrada como activa.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El programador de Spring Boot recupera de forma continua los precios de los activos bursátiles.<br><strong>2.</strong> El servicio de alertas evalúa las alertas activas de la base de datos contra el último precio.<br><strong>3.</strong> Si el precio cruza el trigger de una alerta (ej. sube del precio límite configurado para <code>PRICE_UP</code>), el backend invoca al método <code>disparar()</code>, inactiva la alerta y genera un registro de notificación.<br><strong>4.</strong> Si el usuario está online, el cliente React recibe la notificación instantánea en pantalla mostrando un Toast animado con el mensaje personalizado y el precio exacto del disparo. En la <code>TopBar</code>, el botón de notificaciones utiliza un Lottie animado que se reproduce al hacer hover, proveyendo feedback inmediato visual.<br><strong>5.</strong> El usuario puede pulsar en la notificación para abrir directamente el gráfico del activo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">La alerta se marca como disparada e inactiva, y el usuario recibe el aviso en tiempo real.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;">Si el usuario está sin conexión cuando la alerta se activa en servidor, la notificación queda marcada como pendiente y se le entrega inmediatamente al iniciar sesión de nuevo en la plataforma.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>RF-10: Cierre de Sesión Seguro</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Objetivos asociados</strong></td>
+<td style="text-align: left;"><strong>OBJ-05</strong> (Seguridad de Grado Bancario)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descripción</strong></td>
+<td style="text-align: left;">El usuario cierra su sesión de forma limpia, borrando sus claves de autorización del navegador.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precondición</strong></td>
+<td style="text-align: left;">El usuario debe estar autenticado con sesión activa.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secuencia Normal</strong></td>
+<td style="text-align: left;"><strong>1.</strong> El usuario pulsa en "Cerrar sesión" en la parte inferior del sidebar.<br><strong>2.</strong> El sidebar llama a <code>handleLogout()</code>, que ejecuta <code>logout()</code> del <code>AuthContext</code> y redirige a <code>/login</code> con <code>navigate()</code>.<br><strong>3.</strong> <code>logout()</code> en <code>AuthContext.jsx</code> elimina <code>spyzer_user</code> y <code>spyzer_token</code> de <code>localStorage</code>, y establece <code>user = null</code> y <code>token = null</code> en el estado React.<br><strong>4.</strong> Al actualizarse <code>isAuthenticated</code> a <code>false</code>, <code>AuthRoute</code> redirige automáticamente cualquier intento de acceso a rutas protegidas de vuelta a <code>/login</code>.<br><strong>5.</strong> El navegador muestra el formulario de login con el estado limpio.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Postcondición</strong></td>
+<td style="text-align: left;">La sesión queda destruida en el cliente, haciendo imposible acceder a los paneles privados del usuario sin iniciar sesión de nuevo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excepciones</strong></td>
+<td style="text-align: left;">Si ocurre un fallo en el borrado de las variables del navegador, el frontend fuerza una recarga total de la pestaña redirigiendo a la Landing Page.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. Experiencia de Usuario Responsiva: Mobile vs Desktop</h2>
+<p>El CRM Admin Hub implementa una estrategia de adaptación responsiva basada en <strong>un sidebar colapsable</strong> en lugar de un árbol de componentes completamente bifurcado. La decisión es pragmática: dado que el CRM es una herramienta profesional de asesoramiento que se usa principalmente en escritorio, el esfuerzo se concentró en hacer la experiencia de escritorio impecable y garantizar que la de móvil sea usable y fluida, no en construir dos interfaces paralelas completas.</p>
+<h3>7.1. Comportamiento del Sidebar por Tamaño de Pantalla</h3>
+<p>La adaptación responsiva pivota sobre el sidebar y el <code>MainLayout</code>:</p>
+<p><strong>Desktop (&gt; 1024px):</strong>
+- El sidebar está siempre visible, anclado a la izquierda con <code>position: fixed</code>, 256px de ancho por defecto.
+- El botón de toggle (☰) lo colapsa a 64px, mostrando solo los iconos Lottie sin etiquetas. Al pasar el ratón sobre un ítem colapsado aparece el <code>title</code> con el nombre via atributo HTML nativo.
+- El <code>mainContent</code> usa <code>margin-left: var(--sidebar-width)</code> con transición suave al colapsar.
+- La TopBar muestra el ticker financiero en dashboard y el buscador predictivo en el resto de vistas.</p>
+<p><strong>Tablet / Mobile (≤ 1024px):</strong>
+- El sidebar sale completamente del flujo del documento (el <code>mainContent</code> tiene <code>margin-left: 0</code>).
+- El botón ☰ en la <code>TopBar</code> abre el sidebar como un panel flotante (<em>drawer</em>) sobre el contenido.
+- Un overlay semitransparente (<code>styles.overlay</code>) cubre el resto de la pantalla. Hacer clic sobre él cierra el drawer.
+- Las páginas se muestran en una sola columna con padding reducido (<code>var(--space-md)</code> en tablet, <code>var(--space-sm)</code> en móvil).</p>
+<h3>7.2. Vista de Desktop: El Panel de Control del Asesor</h3>
+<p>En escritorio, el Dashboard ofrece la experiencia más completa:</p>
+<ul>
+<li><strong>KPIs en cuadrícula de 4 columnas:</strong> Las tarjetas de Usuarios Totales, Registros del Último Mes, Correos Enviados e Usuarios Inactivos se muestran en una fila con sus métricas de cambio porcentual respecto al mes anterior y su indicador de tendencia (↑/↓).</li>
+<li><strong>Gráfico de registros con períodos:</strong> Un <code>AreaChart</code> de <code>recharts</code> con gradiente de azul primario muestra la evolución de registros en el período seleccionado (1D, 1S, 1M, 6M, 1A, ALL). La lógica de agrupación temporal se calcula reactivamente en el cliente a partir de los datos reales de <code>fechaRegistro</code> de los usuarios.</li>
+<li><strong>RadialProgress de estado de usuarios:</strong> Tres anillos concéntricos visualizan la distribución de usuarios Inactivos (rojo/<code>--loss</code>), Activos (verde/<code>--gain</code>) y VIP (azul/<code>--primary-container</code>).</li>
+<li><strong>Ticker de mercado en la TopBar:</strong> BTC, ETH, SOL, EUR/USD y GBP/USD desfilan horizontalmente con variaciones de precio codificadas por color.</li>
+<li><strong>SlideButton para exportar PDF:</strong> En lugar de un botón convencional, la exportación del dashboard se activa mediante un slider que el usuario arrastra hasta el final, con animación Lottie integrada. Esto reduce exportaciones accidentales.</li>
+</ul>
+<p>En el perfil de cliente (<code>/clients/:id</code>), el asesor tiene:
+- Cabecera con datos personales (nombre, email, teléfono, ubicación, fecha de registro) e indicador de estado con badge de color.
+- Tres métricas financieras clave: inversión inicial, valor total actual y beneficio/pérdida acumulado.
+- Gráfico de área histórico de la evolución de capital con selector de período (1D/1S/1M/6M/1A/ALL).
+- Timeline cronológico de todas las interacciones: operaciones de trading (COMPRA/VENTA), campañas de email recibidas y fecha de registro de cuenta.
+- Modal de edición de datos del cliente (<code>EditUserModal</code>) para actualizar información personal.</p>
+<h3>7.3. Vista de Móvil: Operatividad en Movimiento</h3>
+<p>En dispositivos móviles, la experiencia se adapta así:</p>
+<ul>
+<li><strong>Navegación:</strong> El sidebar está oculto. El botón ☰ en la esquina superior izquierda de la TopBar lo despliega como panel lateral con un overlay que lo cierra al tocar fuera.</li>
+<li><strong>Dashboard:</strong> Las 4 tarjetas KPI pasan a disposición vertical (una columna). El gráfico de registros y el RadialProgress se apilan verticalmente.</li>
+<li><strong>Lista de clientes:</strong> La tabla del directorio se convierte en una lista de tarjetas con los datos más relevantes de cada cliente.</li>
+<li><strong>Perfil de cliente:</strong> Las secciones de métricas, gráfico e historial se muestran en scroll vertical continuo.</li>
+<li><strong>Buscador:</strong> El buscador predictivo de la TopBar mantiene toda su funcionalidad en móvil, incluyendo el dropdown de resultados.</li>
+</ul>
+<hr />
+<h2>8. Verificación, Pruebas y Monitorización</h2>
+<h3>8.1. Pruebas de Integración y Transaccionalidad</h3>
+<p>La fiabilidad se valida de la suite a través de rigurosas fases de pruebas automatizadas y de estrés:
+* <strong>Consistencia de Transacciones:</strong> Verificamos bajo concurrencia extrema de peticiones simultáneas de usuarios que el balance del portafolio nunca sufra duplicaciones o inconsistencias numéricas.
+* <strong>Tests de Integración en Backend:</strong> Empleamos MockMVC en Spring Boot para testear los flujos de seguridad y autenticación OAuth2, garantizando que el middleware de JWT responda siempre adecuadamente ante tokens manipulados o vencidos.</p>
+<h3>8.2. Monitorización en Vivo (Actuator)</h3>
+<p>Para garantizar la continuidad operativa de la suite, se utiliza <strong>Spring Boot Actuator</strong> configurado para vigilar los componentes en producción:
+* Salud de la persistencia transaccional en MySQL.
+* Latencia en tiempo real y tasa de respuesta de la caché caliente en Redis.</p>
+<hr />
+<h3>8.3. Plan de Pruebas del Módulo CRM</h3>
+<p>El plan de control de calidad del módulo CRM se articula sobre el binomio <strong>JUnit 5 (Jupiter)</strong> y <strong>Mockito</strong> —ambos provistos transitivamente por la dependencia <code>spring-boot-starter-test</code>— complementado con <code>AssertJ</code> para aserciones fluidas y <code>MockMvc</code> para los flujos de integración HTTP. Las pruebas se ejecutan mediante <code>mvn test</code> y se organizan por la responsabilidad concreta que auditan: lógica financiera, consistencia de cartera y seguridad de la migración inicial de datos.</p>
+<h4>A. Tests de Blindaje Lógico Financiero</h4>
+<p>El primer bloque audita el método transaccional <code>ActividadTradingServiceImpl.registrarOperacion(...)</code> para garantizar que ninguna operación de <strong><code>COMPRA</code></strong> consiga generar liquidez negativa en la cuenta del cliente. La regla de negocio bajo escrutinio está implementada en <code>ActividadTradingServiceImpl.java:42-47</code>, donde el servicio calcula el coste total de la transacción como <code>cantidad × precio</code> y lo coteja contra la <code>liquidezActual</code> obtenida del método <code>usuarioService.calcularMetricas(usuarioId)</code>:</p>
+<pre><code class="language-java">if (&quot;COMPRA&quot;.equals(tipo)) {
+    BigDecimal costTotal = dto.getCantidad().multiply(precio);
+    if (costTotal.compareTo(metricas.getLiquidezActual()) &gt; 0) {
+        throw new IllegalArgumentException(
+                &quot;Saldo insuficiente. No tienes liquidez para realizar esta compra&quot;);
+    }
+}
+</code></pre>
+<p>El test unitario correspondiente, redactado bajo el patrón <strong>Arrange-Act-Assert</strong>, mockea <code>UsuarioRepository</code> para devolver un cliente con <code>liquidezActual = 100,00 USD</code> y simula una orden de compra de 5 unidades de <code>AAPL</code> a un precio inyectado en <code>PRECIOS_ACTUALES</code> que produce un coste superior. La aserción verifica que el método detenga la transacción lanzando un <code>IllegalArgumentException</code> controlado (no una excepción genérica de Hibernate) y, mediante <code>verify(actividadTradingRepository, never()).save(any())</code>, confirma que <strong>no se haya persistido ninguna fila en <code>actividades_trading</code></strong>, garantizando que el rollback se aplique antes de tocar la base de datos:</p>
+<pre><code class="language-java">@Test
+void registrarOperacion_compraConSaldoInsuficiente_lanzaIllegalArgumentException() {
+    // Arrange — cliente con liquidez insuficiente
+    when(usuarioRepository.findById(1L)).thenReturn(Optional.of(clienteFake));
+    when(usuarioService.calcularMetricas(1L)).thenReturn(
+            MetricasFinancierasDTO.builder().liquidezActual(new BigDecimal(&quot;100.00&quot;)).build());
+    ActividadTradingRequestDTO dto = ActividadTradingRequestDTO.builder()
+            .tipo(&quot;COMPRA&quot;).instrumento(&quot;AAPL&quot;).cantidad(new BigDecimal(&quot;5&quot;))
+            .usuarioId(1L).fechaActividad(LocalDateTime.now()).build();
+
+    // Act + Assert
+    assertThatThrownBy(() -&gt; service.registrarOperacion(dto))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining(&quot;Saldo insuficiente&quot;);
+    verify(actividadTradingRepository, never()).save(any());
+}
+</code></pre>
+<h4>B. Tests de Consistencia en Posiciones Abiertas</h4>
+<p>El segundo bloque valida el camino simétrico para las órdenes de tipo <strong><code>VENTA</code></strong>, donde la regla de dominio consiste en bloquear la orden si la cantidad solicitada para liquidar el activo es mayor que la <strong><code>cantidadNeta</code></strong> real en mano que posee el usuario en su portafolio. El cálculo de <code>cantidadNeta</code> se construye en <code>UsuarioServiceImpl.calcularMetricas</code> como el sumatorio de compras menos el sumatorio de ventas por instrumento, y se expone al servicio de trading vía el mapa <code>metricas.getCantidadPorInstrumento()</code>. La salvaguarda se aplica en <code>ActividadTradingServiceImpl.java:48-56</code>:</p>
+<pre><code class="language-java">} else if (&quot;VENTA&quot;.equals(tipo)) {
+    BigDecimal cantidadPoseida = metricas.getCantidadPorInstrumento() != null
+            ? metricas.getCantidadPorInstrumento().getOrDefault(instrumento, BigDecimal.ZERO)
+            : BigDecimal.ZERO;
+    if (dto.getCantidad().compareTo(cantidadPoseida) &gt; 0) {
+        throw new IllegalArgumentException(
+                &quot;Operación inválida. No posees suficiente cantidad de este activo para venderlo&quot;);
+    }
+}
+</code></pre>
+<p>El test correspondiente prepara un mapa <code>cantidadPorInstrumento</code> que devuelve <code>Map.of("BTC", new BigDecimal("0.5"))</code> y construye una orden de venta de <code>BTC × 1.0</code>. Se comprueba mediante <code>assertThatThrownBy</code> que el backend bloquee la orden con <code>IllegalArgumentException</code> y se valida que el repositorio nunca reciba la llamada <code>save</code>. Adicionalmente se incluye un test parametrizado (<code>@ParameterizedTest</code> con <code>@CsvSource</code>) que ejercita el caso de borde <strong><code>cantidadVenta == cantidadPoseida</code></strong>, que sí debe ejecutarse correctamente, y el caso de instrumento ausente del portafolio (mapa devuelve <code>BigDecimal.ZERO</code>), que también debe rechazarse. Esta batería previene que un cliente abra <strong>posiciones cortas no autorizadas</strong> liquidando más unidades de las que efectivamente posee en cartera.</p>
+<h4>C. Control de Migración con Jackson Seeding</h4>
+<p>El tercer bloque audita la lógica del componente <code>DataSeeder.java</code>, responsable de cargar el snapshot productivo <code>crm-export.json</code> mediante <code>com.fasterxml.jackson.databind.ObjectMapper</code> en el primer arranque del microservicio. La preocupación central es la <strong>idempotencia</strong>: el seeder debe ejecutar la importación una única vez y abortar de forma temprana en reinicios posteriores para evitar la duplicación de filas en <code>usuarios</code>, <code>actividades_trading</code> y <code>reviews_app</code>.</p>
+<p>La salvaguarda implementada en <code>DataSeeder.java:60-62</code> se apoya en un condicional de seguridad sobre el contador de la tabla <code>administradores</code> —administrada por el propio seeder como marcador de estado—:</p>
+<pre><code class="language-java">@Override
+public void run(String... args) {
+    if (administradorRepository.count() &gt; 0) {
+        return;
+    }
+    // …carga del crm-export.json y persistencia masiva
+}
+</code></pre>
+<p>Funcionalmente equivale a la verificación conceptual <code>if (usuarioRepository.count() == 0)</code>, dado que el administrador <code>admin@spyzer.com</code> se inserta como primera operación del bloque de seeding, por lo que la presencia de cualquier registro en <code>administradores</code> implica que la migración ya se completó. Las pruebas automatizadas sobre este componente cubren tres escenarios:</p>
+<ol>
+<li><strong>Arranque en frío sobre base de datos vacía:</strong> se mockea <code>administradorRepository.count()</code> para devolver <code>0L</code> y se ubica un <code>crm-export.json</code> controlado en el classpath de test mediante <code>@TempDir</code>. Tras ejecutar <code>dataSeeder.run()</code>, se verifica con <code>verify(usuarioRepository).save(any(Usuario.class))</code> que se hayan persistido todos los clientes del JSON y con <code>verify(actividadTradingRepository).saveAll(anyList())</code> que se haya volcado el libro mayor de operaciones.</li>
+<li><strong>Re-arranque sobre base de datos poblada:</strong> se mockea <code>administradorRepository.count()</code> para devolver <code>1L</code> y se invoca de nuevo <code>run()</code>. La aserción confirma que <strong>ningún repositorio recibe llamadas de escritura</strong> (<code>verifyNoInteractions(usuarioRepository, actividadTradingRepository, reviewAppRepository)</code>), demostrando que el condicional de seguridad evita la duplicación de datos de clientes en arranques sucesivos.</li>
+<li><strong>Ausencia del fichero de migración:</strong> se simula un entorno sin <code>crm-export.json</code> y se valida que el <code>log.warn</code> se emita con el path absoluto esperado y que el seeder finalice de forma controlada sin propagar excepciones al contexto Spring, permitiendo que el microservicio arranque incluso ante un fallo de provisioning del fichero de datos.</li>
+</ol>
+<p>El conjunto de los tres bloques —blindaje financiero de compras, consistencia de posiciones en ventas e idempotencia del seeder— constituye la red de seguridad mínima imprescindible para que el módulo CRM pueda promocionarse al entorno de producción con garantías de integridad transaccional y persistencia.</p>
+<hr />
+<blockquote>
+<p><strong>8.4. Plan de Pruebas de Captura y Análisis de Opiniones</strong></p>
+<p><strong>[ZONA DE COLABORACIÓN: SECCIÓN RESERVADA PARA LAS PRUEBAS DE SENTIMIENTO]</strong><br />
+<em>Instrucciones para el redactor encargado:</em><br />
+* Redacta aquí el plan de pruebas del analizador de opiniones (NLP y scraping).
+* Detalla las pruebas unitarias sobre los algoritmos de clasificación de textos, control de excepciones ante fallos de red en el scraping y validaciones de tasas de acierto (Accuracy) de la inteligencia de sentimiento.</p>
+<p><em>--- Elimina esta guía una vez redactado tu contenido ---</em></p>
+</blockquote>
+<hr />
+<h2>9. Requisitos de Hardware y Software</h2>
+<h3>9.1. Requisitos para el Servidor</h3>
+<ul>
+<li><strong>Requisitos Mínimos (Pruebas/Desarrollo):</strong></li>
+<li>CPU: 2 Cores vCPU</li>
+<li>RAM: 2 GB</li>
+<li>Almacenamiento: 10 GB SSD</li>
+<li>Entorno: JRE (Java Runtime) 21, Redis Server 7.x</li>
+<li><strong>Requisitos Recomendados (Producción/Carga Continua):</strong></li>
+<li>CPU: 4 Cores vCPU o superior</li>
+<li>RAM: 4 GB o superior</li>
+<li>Almacenamiento: 20 GB SSD de alta velocidad</li>
+<li>Entorno: Docker &amp; Docker Compose para el microservicio de Spring Boot, base de datos MySQL y caché de Redis.</li>
+</ul>
+<h3>9.2. Requisitos para el Cliente (Navegador)</h3>
+<p>El CRM Admin Hub está construido con tecnología web estándar moderna. Los requisitos mínimos del cliente vienen determinados por las APIs del navegador que el frontend utiliza:</p>
+<ul>
+<li><strong>Requisitos mínimos de navegador:</strong></li>
+<li>Chrome 94+ / Edge 94+ / Firefox 93+ / Safari 15.4+</li>
+<li>Soporte obligatorio de <code>CSS backdrop-filter</code> para el efecto glassmórfico del topbar (Chrome 76+, Safari 9+, Firefox 103+).</li>
+<li>Soporte de <code>ES2020</code> (optional chaining <code>?.</code>, nullish coalescing <code>??</code>) — los módulos se sirven sin transpilar hacia targets viejos dado que Vite produce ES modules nativos.</li>
+<li>Soporte de <code>font-variant-numeric: tabular-nums</code> para la alineación de columnas numéricas (todos los browsers modernos).</li>
+<li>Soporte de <code>CSS Custom Properties</code> (variables CSS) — imprescindible ya que todo el sistema de tokens se basa en ellas.</li>
+<li>
+<p>JavaScript habilitado (la aplicación es una SPA y no tiene fallback de server-side rendering).</p>
+</li>
+<li>
+<p><strong>Conexión de red:</strong></p>
+</li>
+<li>Mínimo 2 Mbps para carga inicial de assets (Lottie JSON, fuente Inter, imágenes).</li>
+<li>
+<p>1 Mbps sostenido para las actualizaciones periódicas de datos del dashboard y el ticker.</p>
+</li>
+<li>
+<p><strong>Resolución de pantalla:</strong></p>
+</li>
+<li>Desktop recomendado: 1440px de ancho o superior (viewport optimizado por el design system).</li>
+<li>Funcional desde 375px de ancho (móvil mínimo soportado según los breakpoints del DESIGN.md).</li>
+</ul>
+<hr />
+<h2>10. Conclusiones y el Futuro de la Suite</h2>
+<p>El desarrollo de Spyzer demuestra con creces cómo un ecosistema unificado de herramientas fintech puede simplificar la interacción con el mercado financiero. Al entrelazar un simulador de trading realista con un CRM especializado de asesoramiento y un analizador dinámico del sentimiento social en la red, se ha transformado el trading simulado de una tarea solitaria a una experiencia inteligente y compartida.</p>
+<p>Gracias a la solidez estructural de <strong>Spring Boot 3.5.6</strong> en el backend y la agilidad responsiva de <strong>React 19</strong> en el frontend, Spyzer no solo responde de forma impecable y robusta a las altas exigencias del mercado, sino que ofrece una interfaz intuitiva y sumamente humana que conecta de forma genuina con los usuarios de hoy. De cara al futuro, la suite está preparada para incorporar modelos de predicción de IA más complejos en el análisis de opiniones y alertas dinámicas, consolidando su posición como un referente educativo y estratégico en el sector financiero.</p>
+<hr />
+<h2>11. Glosario de Términos</h2>
+<ul>
+<li><strong>Spring Boot:</strong> Entorno de desarrollo para Java enfocado en la construcción rápida de servicios web independientes, modulares y listos para producción empresarial.</li>
+<li><strong>React 19:</strong> Librería de JavaScript declarativa y basada en componentes creada para construir interfaces de usuario web dinámicas de alto rendimiento.</li>
+<li><strong>Redis:</strong> Motor de datos ultra veloz en memoria que se utiliza en Spyzer como caché para evitar latencias de red al consultar cotizaciones e índices de opiniones.</li>
+<li><strong>JWT (JSON Web Token):</strong> Token seguro y autocontenido firmado criptográficamente para autorizar peticiones de red entre cliente y servidor.</li>
+<li><strong>Sentiment Index (Índice de Sentimiento):</strong> Métrica porcentual que mide el optimismo o pesimismo colectivo detectado en opiniones en la red sobre un activo bursátil.</li>
+<li><strong>Glassmorphism:</strong> Estilo moderno de interfaz de usuario caracterizado por el uso de desenfoques y transparencias que asemejan paneles de vidrio esmerilado flotantes.</li>
+<li><strong>ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad):</strong> Conjunto de propiedades que garantizan la absoluta fiabilidad en las transacciones de bases de datos financieras.</li>
+<li><strong>Vite:</strong> Bundler de desarrollo web de nueva generación basado en ES modules nativos y esbuild, que proporciona un servidor de desarrollo con HMR (Hot Module Replacement) casi instantáneo. Utilizado en Spyzer Admin Hub en su versión 8.</li>
+<li><strong>Recharts:</strong> Biblioteca de gráficos para React basada en SVG y D3, utilizada en el Admin Hub para los gráficos de área (evolución de registros, capital de clientes) y los gráficos de donut (distribución de cartera).</li>
+<li><strong>Lottie:</strong> Formato de animación basado en JSON exportado desde Adobe After Effects, que permite reproducir animaciones vectoriales de alta calidad en el navegador con un tamaño de archivo mínimo. Empleado en Spyzer para los iconos animados del sidebar y la barra de navegación.</li>
+<li><strong>Framer Motion:</strong> Biblioteca de animaciones declarativas para React, empleada en Spyzer para las animaciones de entrada de componentes (fade-in + slide-up escalonado), transiciones de estado y el botón de retroceso animado en la TopBar.</li>
+<li><strong>CSS Custom Properties (Variables CSS):</strong> Mecanismo nativo del navegador para definir valores reutilizables en CSS. Todo el design system de Spyzer se basa en ellas (colores, espaciados, tipografías, radios) definidas en <code>tokens.css</code>.</li>
+<li><strong>Breakpoint:</strong> Punto de quiebre en la anchura de pantalla a partir del cual el diseño cambia su disposición. El Admin Hub usa principalmente <code>1024px</code> para distinguir entre la vista con sidebar fijo (desktop) y la vista con drawer (mobile/tablet).</li>
+<li><strong>SPA (Single Page Application):</strong> Arquitectura web donde la aplicación carga una sola página HTML y gestiona la navegación en el cliente mediante JavaScript. Spyzer Admin Hub es una SPA gestionada con React Router DOM v7.</li>
+<li><strong>Mock Mode:</strong> Modo de desarrollo del Admin Hub en el que los servicios devuelven datos estáticos predefinidos en lugar de hacer peticiones reales al backend. Se activa mediante la variable de entorno <code>VITE_USE_MOCKS</code>.</li>
+<li><strong>Tabular Nums (<code>font-variant-numeric: tabular-nums</code>):</strong> Propiedad CSS que hace que todos los dígitos ocupen exactamente el mismo ancho, garantizando la alineación perfecta de columnas de números en tablas financieras.</li>
+</ul>
+<hr />
+<h2>12. Bibliografía y Referencias</h2>
+<ol>
+<li>Documentación Oficial de Spring Framework, Spring Security y Spring Boot: <a href="https://spring.io/">https://spring.io/</a></li>
+<li>Manual de referencia y guías avanzadas de React 19: <a href="https://react.dev/">https://react.dev/</a></li>
+<li>Especificación oficial y guías de uso de Lightweight Charts (TradingView): <a href="https://tradingview.github.io/lightweight-charts/">https://tradingview.github.io/lightweight-charts/</a></li>
+<li>Documentación de Redis Cache e integración con Spring Data: <a href="https://redis.io/">https://redis.io/</a></li>
+<li>Manuales de Procesamiento de Lenguaje Natural (NLP) aplicado al análisis de sentimiento bursátil: <a href="https://www.nltk.org/">https://www.nltk.org/</a></li>
+<li>Documentación oficial de Vite 8 — Bundler y servidor de desarrollo: <a href="https://vite.dev/">https://vite.dev/</a></li>
+<li>Documentación de React Router DOM v7 (enrutamiento SPA): <a href="https://reactrouter.com/">https://reactrouter.com/</a></li>
+<li>Referencia de la API de Recharts — biblioteca de gráficos para React: <a href="https://recharts.org/">https://recharts.org/</a></li>
+<li>Documentación de Framer Motion — animaciones declarativas para React: <a href="https://motion.dev/">https://motion.dev/</a></li>
+<li>Repositorio de Lottie React — integración de animaciones Lottie en React: <a href="https://github.com/LottieFiles/lottie-react">https://github.com/LottieFiles/lottie-react</a></li>
+<li>Lucide React — biblioteca de iconos SVG: <a href="https://lucide.dev/">https://lucide.dev/</a></li>
+<li>Especificación W3C de CSS backdrop-filter (soporte de glassmorphism): <a href="https://drafts.fxtf.org/filter-effects-2/">https://drafts.fxtf.org/filter-effects-2/</a></li>
+</ol>
+<hr />
+<h2>A. Estructura de Carpetas del Frontend</h2>
+<p>El frontend sigue una organización basada en <strong>responsabilidad</strong> de cada carpeta, con una separación clara entre lo que es compartido (componentes reutilizables, servicios, hooks, contextos) y lo que es específico de una ruta (páginas):</p>
+<pre><code>frontend/
+├── public/                          # Assets estáticos servidos directamente
+├── src/
+│   ├── main.jsx                     # Punto de entrada: monta React, providers y estilos globales
+│   ├── App.jsx                      # Árbol de rutas: públicas, protegidas y fallback
+│   │
+│   ├── assets/
+│   │   ├── lottie/                  # Archivos JSON de animaciones Lottie
+│   │   │   ├── dashboard.json
+│   │   │   ├── client.json
+│   │   │   ├── mail.json
+│   │   │   ├── Review.json
+│   │   │   ├── notification.json
+│   │   │   ├── exit.json
+│   │   │   ├── help.json
+│   │   │   ├── analytics.json
+│   │   │   ├── Order History.json
+│   │   │   └── Pdf.json
+│   │   └── logo-spyzer.png          # Logo corporativo Spyzer
+│   │
+│   ├── components/                  # Componentes reutilizables globales
+│   │   ├── AuthRoute/               # Guard de rutas protegidas
+│   │   │   └── AuthRoute.jsx
+│   │   ├── Badge/                   # Badge de estado (positivo/negativo/scheduled)
+│   │   │   ├── Badge.jsx
+│   │   │   └── Badge.module.css
+│   │   ├── Card/                    # Contenedor de tarjeta (base + hoverable)
+│   │   │   ├── Card.jsx
+│   │   │   └── Card.module.css
+│   │   ├── ClientTable/             # Tabla del directorio de clientes
+│   │   │   ├── ClientTable.jsx
+│   │   │   └── ClientTable.module.css
+│   │   ├── EditUserModal/           # Modal de edición de datos de cliente
+│   │   │   ├── EditUserModal.jsx
+│   │   │   ├── EditUserModal.module.css
+│   │   │   └── index.js
+│   │   ├── LogoLoop/                # Ticker horizontal animado (Wall Street style)
+│   │   │   ├── LogoLoop.jsx
+│   │   │   └── LogoLoop.module.css
+│   │   ├── Modal/                   # Modal genérico
+│   │   │   ├── Modal.jsx
+│   │   │   ├── Modal.module.css
+│   │   │   └── index.js
+│   │   ├── Progress/                # Barra de progreso inline
+│   │   │   ├── Progress.jsx
+│   │   │   └── Progress.module.css
+│   │   ├── RadialProgress/          # Anillos radiales de progreso para distribución
+│   │   │   ├── RadialProgress.jsx
+│   │   │   └── RadialProgress.module.css
+│   │   ├── Sidebar/                 # Panel de navegación lateral con Lottie
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── Sidebar.module.css
+│   │   ├── SlideButton/             # Botón-slider para acciones confirmadas (PDF export)
+│   │   │   ├── SlideButton.jsx
+│   │   │   └── SlideButton.module.css
+│   │   ├── TopBar/                  # Barra superior con ticker/buscador, notificaciones y avatar
+│   │   │   ├── TopBar.jsx
+│   │   │   └── TopBar.module.css
+│   │   └── WheelPagination/         # Paginación de scroll para la actividad reciente
+│   │       ├── WheelPagination.jsx
+│   │       └── WheelPagination.module.css
+│   │
+│   ├── context/
+│   │   └── AuthContext.jsx          # Proveedor global de autenticación (user, token, login, logout)
+│   │
+│   ├── hooks/
+│   │   └── useAuth.js               # Hook que consume AuthContext con validación de contexto
+│   │
+│   ├── layouts/
+│   │   └── MainLayout/              # Shell de las páginas protegidas (sidebar + topbar + outlet)
+│   │       ├── MainLayout.jsx
+│   │       └── MainLayout.module.css
+│   │
+│   ├── mocks/                       # Datos estáticos para el modo de desarrollo sin backend
+│   │   ├── clients.js               # Lista de clientes de ejemplo
+│   │   ├── dashboard.js             # Métricas KPI, actividad reciente y datos de distribución
+│   │   ├── emails.js                # Campañas y plantillas de correo
+│   │   └── reviews.js               # Reseñas y estadísticas de sentimiento
+│   │
+│   ├── pages/                       # Vistas asociadas a rutas del router
+│   │   ├── ClientProfile/           # Perfil individual de cliente con métricas y timeline
+│   │   │   ├── ClientProfile.jsx
+│   │   │   └── ClientProfile.module.css
+│   │   ├── ClientsList/             # Directorio de clientes con buscador
+│   │   │   ├── ClientsList.jsx
+│   │   │   └── ClientsList.module.css
+│   │   ├── Dashboard/               # Panel principal con KPIs, gráficos y actividad
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── Dashboard.module.css
+│   │   ├── Emails/                  # Módulo de campañas de correo
+│   │   │   ├── Emails.jsx
+│   │   │   └── Emails.module.css
+│   │   ├── Login/                   # Pantalla de inicio de sesión (pública)
+│   │   │   ├── Login.jsx
+│   │   │   └── Login.module.css
+│   │   ├── Reviews/                 # Panel de reseñas con análisis de sentimiento IA
+│   │   │   ├── Reviews.jsx
+│   │   │   └── Reviews.module.css
+│   │   └── ReviewsForm/             # Formulario público de reseña para clientes externos
+│   │       ├── ReviewsForm.jsx
+│   │       └── ReviewsForm.module.css
+│   │
+│   ├── services/                    # Capa de acceso a datos: API real o mocks
+│   │   ├── api.js                   # Helper HTTP unificado con inyección de JWT
+│   │   ├── authService.js           # Login / gestión de credenciales
+│   │   ├── clientService.js         # Clientes: listado, perfil, métricas, historial, PDF
+│   │   ├── dashboardService.js      # KPIs, distribución, actividad reciente, exportación PDF
+│   │   ├── emailService.js          # Campañas de correo y plantillas
+│   │   └── reviewService.js         # Reseñas y estadísticas de sentimiento
+│   │
+│   └── styles/                      # Estilos globales y design tokens
+│       ├── reset.css                # Neutralización de estilos del navegador
+│       ├── tokens.css               # Variables CSS del Spyzer Design System
+│       └── global.css               # Tipografía base, clases utilitarias, selección
+│
+├── package.json                     # Dependencias, scripts (dev, build, lint, preview)
+├── vite.config.js                   # Configuración de Vite: alias @, puerto 5173
+└── .eslintrc / eslint.config.js     # Reglas ESLint con plugin react-hooks
+</code></pre>
+<hr />
+<h2>B. Servicios y Comunicación con el Backend</h2>
+<h3>B.1. Arquitectura del cliente HTTP</h3>
+<p>Toda la comunicación con el backend pasa por un único punto de entrada: el helper <code>request()</code> definido en <code>frontend/src/services/api.js</code>. Este helper se encarga automáticamente de inyectar el JWT en la cabecera <code>Authorization</code> de cada petición, detectar errores HTTP (incluyendo el 401 para redirigir al login) y manejar respuestas de tipo PDF (devolviendo un <code>Blob</code> en lugar de JSON):</p>
+<pre><code class="language-js">// frontend/src/services/api.js
+export const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api'
+export const USE_MOCKS = import.meta.env.VITE_USE_MOCKS !== 'false'
+
+export async function request(endpoint, options = {}) {
+  const token = localStorage.getItem('spyzer_token')
+  const headers = {
+    'Content-Type': 'application/json',
+    ...(token &amp;&amp; { Authorization: `Bearer ${token}` }),
+    ...options.headers,
+  }
+  const response = await fetch(`${BASE_URL}${endpoint}`, { ...options, headers })
+
+  if (!response.ok) {
+    if (response.status === 401) throw new Error('Credenciales incorrectas.')
+    const errorData = await response.json().catch(() =&gt; ({}))
+    throw new Error(errorData.message || `Error en la petición: ${response.status}`)
+  }
+
+  const contentType = response.headers.get('content-type')
+  if (contentType?.includes('application/pdf')) return response.blob()
+  return response.json()
+}
+</code></pre>
+<h3>B.2. Tabla completa de endpoints consumidos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Servicio</th>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>authService</code></td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/auth/login</code></td>
+<td style="text-align: left;">Autenticación con email y contraseña. Devuelve <code>{ token, nombre, rol, email }</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/usuarios</code></td>
+<td style="text-align: left;">Lista completa de usuarios/clientes. Mapea <code>estadoUsuario</code> → <code>accountStatus</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/usuarios/:id</code></td>
+<td style="text-align: left;">Datos de un cliente por ID numérico.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/usuarios/email/:email</code></td>
+<td style="text-align: left;">Búsqueda de cliente por email (alternativa al ID).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/usuarios/:id/metricas</code></td>
+<td style="text-align: left;">Métricas financieras: <code>invertido</code>, <code>liquidezActual</code>, <code>valorActualAcciones</code>, <code>gananciaPerdida</code>, <code>distribucionCarteraPorcentaje</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/usuarios/:id/actividades</code></td>
+<td style="text-align: left;">Historial de eventos del cliente: <code>tipoEvento</code> (TRADING/EMAIL/REVIEW), <code>fecha</code>, <code>descripcion</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/usuarios/:id/segmentos/procesar</code></td>
+<td style="text-align: left;">Recalcula los segmentos automáticos del cliente en el backend.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/usuarios/:id/historial-capital?period=</code></td>
+<td style="text-align: left;">Serie temporal del capital. Períodos backend: <code>1M</code> o <code>1Y</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/usuarios/:id/export-pdf</code></td>
+<td style="text-align: left;">Genera y devuelve el informe PDF del cliente como <code>Blob</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientService</code></td>
+<td style="text-align: left;">PUT</td>
+<td style="text-align: left;"><code>/usuarios/:id</code></td>
+<td style="text-align: left;">Actualiza los datos personales del cliente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dashboardService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/stats/kpis</code></td>
+<td style="text-align: left;">KPIs globales de la plataforma.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dashboardService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/stats/instrumentos</code></td>
+<td style="text-align: left;">Distribución de instrumentos financieros por tipo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dashboardService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/stats/actividades/ultimas-24h</code></td>
+<td style="text-align: left;">Resumen de operaciones de las últimas 24 horas: <code>totalOperaciones</code>, <code>volumenPorMoneda</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dashboardService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/stats/actividad-reciente</code></td>
+<td style="text-align: left;">Lista de eventos recientes paginables: <code>tipoEvento</code>, <code>fecha</code>, <code>descripcion</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dashboardService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/stats/usuarios/por-mes</code></td>
+<td style="text-align: left;">Registros de usuarios agrupados por mes: <code>{ anio, mes, totalUsuarios }</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dashboardService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/stats/export</code></td>
+<td style="text-align: left;">Exporta el PDF del resumen del dashboard. Devuelve <code>Blob</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>emailService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/campanas</code></td>
+<td style="text-align: left;">Lista de campañas de correo enviadas/pendientes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>emailService</code></td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/campanas</code></td>
+<td style="text-align: left;">Crea y envía una nueva campaña de correo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>emailService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/campanas/plantillas</code></td>
+<td style="text-align: left;">Plantillas de correo disponibles.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>reviewService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/reviews</code></td>
+<td style="text-align: left;">Lista de reseñas de clientes con <code>sentimientoIa</code> (POSITIVO/NEGATIVO/NEUTRO).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>reviewService</code></td>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;"><code>/reviews</code></td>
+<td style="text-align: left;">Crea una nueva reseña desde el formulario público.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>reviewService</code></td>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;"><code>/stats/reviews</code></td>
+<td style="text-align: left;">Estadísticas de reseñas: <code>notaPromedio</code>, <code>desglosePorSentimiento</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3>B.3. Flujo de autenticación end-to-end</h3>
+<p>El flujo completo desde que el usuario introduce sus credenciales hasta que accede al dashboard es el siguiente:</p>
+<ol>
+<li><code>Login.jsx</code> captura el submit del formulario y llama a <code>useAuth().login(email, password)</code>.</li>
+<li><code>AuthContext.login()</code> invoca <code>authService.login()</code> → POST <code>/api/auth/login</code>.</li>
+<li>El backend valida las credenciales y devuelve <code>{ token, nombre, rol, email }</code>.</li>
+<li><code>AuthContext</code> persiste el JWT en <code>localStorage.setItem('spyzer_token', data.token)</code> y el perfil en <code>localStorage.setItem('spyzer_user', JSON.stringify(userData))</code>.</li>
+<li>El estado React <code>user</code> y <code>token</code> se actualizan, lo que hace que <code>isAuthenticated</code> sea <code>true</code>.</li>
+<li><code>Login.jsx</code> detecta el <code>result.success</code> y ejecuta <code>navigate('/dashboard')</code>.</li>
+<li>En cada petición posterior, el helper <code>request()</code> recupera <code>localStorage.getItem('spyzer_token')</code> y lo inyecta como <code>Authorization: Bearer {jwt}</code> automáticamente.</li>
+<li>Al cerrar sesión, <code>AuthContext.logout()</code> limpia <code>localStorage</code> y resetea el estado, haciendo que <code>AuthRoute</code> intercepte cualquier navegación y redirija a <code>/login</code>.</li>
+</ol>
+<h3>B.4. Mapeo de DTOs del backend</h3>
+<p>El backend devuelve algunos campos con nombres de camelCase español que el frontend normaliza durante el mapeo en cada servicio:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo backend</th>
+<th style="text-align: left;">Campo frontend normalizado</th>
+<th style="text-align: left;">Contexto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>estadoUsuario</code> ('INACTIVO', 'VIP', otros)</td>
+<td style="text-align: left;"><code>accountStatus</code> ('Inactive', 'VIP', 'Active')</td>
+<td style="text-align: left;"><code>clientService.getClients()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>capitalTotal</code></td>
+<td style="text-align: left;"><code>totalCapitalInvested</code></td>
+<td style="text-align: left;"><code>clientService.getClients()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metricas.invertido</code></td>
+<td style="text-align: left;"><code>inversionInicial</code></td>
+<td style="text-align: left;"><code>clientService.getClientById()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metricas.gananciaPerdida</code></td>
+<td style="text-align: left;"><code>beneficioTotal</code></td>
+<td style="text-align: left;"><code>clientService.getClientById()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metricas.liquidezActual + valorActualAcciones</code></td>
+<td style="text-align: left;"><code>dineroTotal</code></td>
+<td style="text-align: left;"><code>clientService.getClientById()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metricas.distribucionCarteraPorcentaje</code></td>
+<td style="text-align: left;"><code>portfolioDistribution[]</code> con colores por activo</td>
+<td style="text-align: left;"><code>clientService.getClientById()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>actividad.tipoEvento</code> ('TRADING', 'EMAIL', 'REVIEW')</td>
+<td style="text-align: left;"><code>{ title: 'Compra'/'Venta'/... }</code></td>
+<td style="text-align: left;"><code>clientService.getClientById()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>stats.notaPromedio</code></td>
+<td style="text-align: left;"><code>averageRating</code></td>
+<td style="text-align: left;"><code>reviewService.getReviewStats()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>stats.desglosePorSentimiento.POSITIVO</code></td>
+<td style="text-align: left;"><code>sentiment.positive</code></td>
+<td style="text-align: left;"><code>reviewService.getReviewStats()</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>C. Historial de Desarrollo del Frontend</h2>
+<p>Los siguientes commits representan los hitos principales de la evolución del frontend del Spyzer Admin Hub, extraídos del historial de git. Se listan sin fechas, agrupados por fase de desarrollo.</p>
+<h3>Fase 1 — Estructura base y autenticación</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hash</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>7c4fabf</code></td>
+<td style="text-align: left;">feat(login): implementar animación wave en inputs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>b0a8946</code></td>
+<td style="text-align: left;">style(login): actualizar color de animación wave</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>acc3703</code></td>
+<td style="text-align: left;">feat(login): acortar y traducir labels</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bccf041</code></td>
+<td style="text-align: left;">fix(login): prevenir que el autocompletado rompa el diseño</td>
+</tr>
+</tbody>
+</table>
+<h3>Fase 2 — Layout, sidebar y navegación</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hash</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>494f06e</code></td>
+<td style="text-align: left;">feat(layout): implementar glassmorphism en el topbar al hacer scroll</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>440a210</code></td>
+<td style="text-align: left;">feat(sidebar): agregar botón de 3 barras para colapsar y expandir la barra</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>9ad684e</code></td>
+<td style="text-align: left;">feat(sidebar): añadir rotación de toggle, transición de iconos estática e icono de dashboard animado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6070a2d</code></td>
+<td style="text-align: left;">feat(ui): implementar lotties, inmovilizar iconos en sidebar y aumentar a 40px</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bd3cbb7</code></td>
+<td style="text-align: left;">feat(sidebar): añadir logo corporativo a la cabecera</td>
+</tr>
+</tbody>
+</table>
+<h3>Fase 3 — Dashboard y componentes de datos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hash</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>19f3197</code></td>
+<td style="text-align: left;">feat(ui): añadir ticker estilo wall street en la topbar del dashboard</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>25d41c1</code></td>
+<td style="text-align: left;">feat(ui): ocultar buscador en dashboard, fix lottie notificaciones y traducir app a español</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6d3a9f5</code></td>
+<td style="text-align: left;">feat(ui): implementar lotties en topbar/dashboard y fix definitivo de sacudida</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>d10635f</code></td>
+<td style="text-align: left;">feat(ui): sustituir botón exportar PDF por slider arrastrable con lottie</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>19d105b</code></td>
+<td style="text-align: left;">feat(dashboard): refactorizar KPIs restantes y gráfica de roles</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>aefee70</code></td>
+<td style="text-align: left;">feat(dashboard): actualizar lógica y diseño de tarjetas KPI</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>912685d</code></td>
+<td style="text-align: left;">feat(ui): implementar componente RadialProgress interactivo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>55b9fc0</code></td>
+<td style="text-align: left;">feat(ui): hacer reactiva la gráfica de registros y ajustar su tamaño</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>5051945</code></td>
+<td style="text-align: left;">feat(ui): añadir paginación dinámica a la actividad reciente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>f4bd94e</code></td>
+<td style="text-align: left;">feat(dashboard): calcular registros de usuarios para la gráfica reactivamente de los datos reales</td>
+</tr>
+</tbody>
+</table>
+<h3>Fase 4 — Directorio de clientes y perfil</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hash</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>9c140a1</code></td>
+<td style="text-align: left;">feat(clients): implementar directorio interactivo de clientes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ff138a7</code></td>
+<td style="text-align: left;">feat(topbar): agregar buscador predictivo y botón animado de retroceso</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>7c4157c</code></td>
+<td style="text-align: left;">feat(client-profile): agregar períodos de gráficos y efectos hover</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>48656b1</code></td>
+<td style="text-align: left;">feat(frontend): integrar barra de progreso inline a perfil de cliente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6b889fc</code></td>
+<td style="text-align: left;">feat(client-profile): agregar modal para editar datos del cliente</td>
+</tr>
+</tbody>
+</table>
+<h3>Fase 5 — Integración con la API real</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hash</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>e4bc553</code></td>
+<td style="text-align: left;">refactor(services): separar endpoints en servicios modulares</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>c626d95</code></td>
+<td style="text-align: left;">refactor(frontend): actualización de mocks, doc de arquitectura y refactorización a CSS Modules</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2180f99</code></td>
+<td style="text-align: left;">refactor(pages): integrar servicios API y eliminar mocks directos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6d77f70</code></td>
+<td style="text-align: left;">fix(services, charts): integrar endpoints reales y corregir advertencias de recharts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>8bb562d</code></td>
+<td style="text-align: left;">feat(api): integrar nuevos endpoints de Swagger para historial, plantillas y exportación PDF</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>048f9e2</code></td>
+<td style="text-align: left;">fix(services): mapear estadoUsuario y capitalTotal del DTO para corregir visualización</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>975bd2a</code></td>
+<td style="text-align: left;">fix(clients): arreglar filtro de búsqueda y mapeo de IDs para la API</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2141b9f</code></td>
+<td style="text-align: left;">fix(client-profile, topbar): añadir fallbacks de seguridad y eliminar mockClients de la barra de búsqueda global</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3fc9a84</code></td>
+<td style="text-align: left;">fix(clients): conectar historial de interacciones con el endpoint real de actividades de compra/venta</td>
+</tr>
+</tbody>
+</table>
+<h3>Fase 6 — Módulo de emails y reseñas</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hash</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>74c61c1</code></td>
+<td style="text-align: left;">feat(reviews): agregar ruta y componente público para formulario de reseñas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>e17a722</code></td>
+<td style="text-align: left;">fix(reviews): adaptar DTO del backend y añadir fallback para evitar crash</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3f41191</code></td>
+<td style="text-align: left;">feat(emails): refactor del UI de campañas y botón animado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>73a2a1c</code></td>
+<td style="text-align: left;">feat(emails): integrar enlace CTA de reseñas en el cuerpo de campañas de correo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>745a32c</code></td>
+<td style="text-align: left;">feat(emails): rediseño de roles, enlace automático a reseñas y mapeo del historial de campañas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1c8f30a</code></td>
+<td style="text-align: left;">feat(emails): asignar colores específicos a cada rol (blanco, verde, azul, rojo)</td>
+</tr>
+</tbody>
+</table>
+<h3>Fase 7 — Pulido numérico y formato final</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hash</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>b943ad9</code></td>
+<td style="text-align: left;">fix(format): unificar formato numérico a español (es-ES) con 2 decimales en descripciones y dashboard</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>5d13eb7</code></td>
+<td style="text-align: left;">style(ui): forzar visualización de valores numéricos con dos decimales</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2ae998a</code></td>
+<td style="text-align: left;">chore(mocks): sincronizar mock de plantillas con estructura del backend</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>afb987f</code></td>
+<td style="text-align: left;">Merge pull request #18 from carlosparmar1/charly</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

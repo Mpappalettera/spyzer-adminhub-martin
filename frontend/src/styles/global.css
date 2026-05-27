@@ -1,0 +1,74 @@
+/* ============================================================
+   Global Styles — SpyzerAdminHub
+   ============================================================ */
+
+/* Inter from Google Fonts — tabular figures for financial data */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--body-md-line);
+  color: var(--on-surface);
+  background-color: var(--surface);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* === UTILITY TYPOGRAPHY CLASSES === */
+
+.display-lg {
+  font-size: var(--display-lg-size);
+  font-weight: var(--display-lg-weight);
+  line-height: var(--display-lg-line);
+  letter-spacing: var(--display-lg-spacing);
+}
+
+.display-md {
+  font-size: var(--display-md-size);
+  font-weight: var(--display-md-weight);
+  line-height: var(--display-md-line);
+  letter-spacing: var(--display-md-spacing);
+}
+
+.headline-sm {
+  font-size: var(--headline-sm-size);
+  font-weight: var(--headline-sm-weight);
+  line-height: var(--headline-sm-line);
+}
+
+.body-lg {
+  font-size: var(--body-lg-size);
+  font-weight: var(--body-lg-weight);
+  line-height: var(--body-lg-line);
+}
+
+.body-md {
+  font-size: var(--body-md-size);
+  font-weight: var(--body-md-weight);
+  line-height: var(--body-md-line);
+}
+
+.label-caps {
+  font-size: var(--label-caps-size);
+  font-weight: var(--label-caps-weight);
+  line-height: var(--label-caps-line);
+  letter-spacing: var(--label-caps-spacing);
+  text-transform: uppercase;
+}
+
+.data-mono {
+  font-size: var(--data-mono-size);
+  font-weight: var(--data-mono-weight);
+  line-height: var(--data-mono-line);
+  font-variant-numeric: tabular-nums;
+}
+
+/* === SELECTION === */
+::selection {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}

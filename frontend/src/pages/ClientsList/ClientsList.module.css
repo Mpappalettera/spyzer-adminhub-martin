@@ -1,0 +1,27 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.pageTitle {
+  font-size: var(--headline-sm-size);
+  font-weight: var(--headline-sm-weight);
+  color: var(--on-surface);
+}
+
+.paginationContainer {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+}

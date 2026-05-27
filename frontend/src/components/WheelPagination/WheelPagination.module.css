@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  user-select: none;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: var(--rounded-full);
+  color: var(--outline);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.navButton:hover:not(:disabled) {
+  color: var(--primary);
+  background: var(--surface-container-high);
+}
+
+.navButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageDot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--rounded-full);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--body-md-size);
+  cursor: pointer;
+  background-color: var(--surface-container-high);
+  color: var(--on-surface-variant);
+  transition: background-color var(--transition-fast);
+}
+
+.pageDotActive {
+  composes: pageDot;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: 1px solid var(--primary);
+}

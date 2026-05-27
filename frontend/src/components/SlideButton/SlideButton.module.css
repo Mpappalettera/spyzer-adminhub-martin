@@ -1,0 +1,95 @@
+.track {
+  position: relative;
+  display: flex;
+  height: 48px;
+  width: 280px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  background-color: var(--surface-variant);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+}
+
+.trackText {
+  position: absolute;
+  z-index: 0;
+  color: var(--outline);
+  font-size: var(--body-md-size);
+  font-weight: 500;
+  pointer-events: none;
+  /* Push text a bit to the right so it doesn't overlap the initial handle too much */
+  transform: translateX(12px); 
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 24px;
+  background-color: #1C1B1B;
+  z-index: 1;
+}
+
+.handleWrapper {
+  position: absolute;
+  left: 4px;
+  z-index: 10;
+  display: flex;
+  cursor: grab;
+  align-items: center;
+  justify-content: center;
+}
+
+.handleWrapper:active {
+  cursor: grabbing;
+}
+
+.handle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #ffffff; /* Contrast on primary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  color: var(--primary);
+  pointer-events: none; /* handle hover events mostly via wrapper */
+}
+
+/* Fallback for dark theme inside handle if needed */
+:global(.dark) .handle {
+  background-color: var(--on-surface);
+}
+
+.completedState {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #1C1B1B;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: var(--body-md-size);
+}
+
+.loader {
+  width: 24px;
+  aspect-ratio: 1.154;
+  --_g: no-repeat radial-gradient(farthest-side,#1C1B1B 90%,#0000);
+  background: 
+    var(--_g) 50%  0,
+    var(--_g) 0    100%,
+    var(--_g) 100% 100%;
+  background-size: 35% calc(35%*1.154);
+  animation: l16 1s infinite;
+  margin: 0 auto;
+}
+@keyframes l16{ 
+    50%,100% {background-position: 100% 100%,50% 0,0 100%} 
+}

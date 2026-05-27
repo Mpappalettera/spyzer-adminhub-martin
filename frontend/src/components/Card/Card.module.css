@@ -1,0 +1,32 @@
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-md);
+  transition: box-shadow var(--transition-normal);
+}
+
+.cardHoverable:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.cardTitle {
+  font-size: var(--label-caps-size);
+  font-weight: var(--label-caps-weight);
+  letter-spacing: var(--label-caps-spacing);
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+.cardIcon {
+  color: var(--outline);
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,37 @@
+# ===========================
+# Archivos locales de Carlos (NO subir a GitHub)
+# ===========================
+PromptInicioFront.md
+PROMPTS_GUIDE.md
+stitch_spyzer_admin_hub_dashboard/
+PromptPolish.md
+PrompRetoqueFront.md
+Diagnosticador.md
+
+# ===========================
+# IDE y sistema
+# ===========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ===========================
+# Variables de entorno
+# ===========================
+.env.local
+.env.*.local
+
+# ===========================
+# Build / Maven (raíz legacy)
+# ===========================
+target/
+*.class
+
+# ===========================
+# Node (por si acaso en raíz)
+# ===========================
+node_modules/

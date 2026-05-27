@@ -1,0 +1,14 @@
+package com.spyzer.crm_backend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class NlpReviewResponseDTO {
+    private String sentiment;
+    private String model_used;
+    private Double confidence_score;
+}

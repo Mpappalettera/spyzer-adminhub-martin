@@ -1,0 +1,309 @@
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.headerLeft h1 {
+  font-size: var(--headline-sm-size);
+  font-weight: var(--headline-sm-weight);
+  line-height: var(--headline-sm-line);
+  color: var(--on-surface);
+}
+
+.headerLeft p {
+  color: var(--on-surface-variant);
+  font-size: var(--body-md-size);
+  margin-top: var(--space-xs);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.exportBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--primary-container);
+  border-radius: var(--rounded);
+  color: var(--primary);
+  font-size: var(--data-mono-size);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.exportBtn:hover {
+  background-color: rgba(80, 141, 255, 0.1);
+  box-shadow: var(--shadow-glow);
+}
+
+.marketBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--surface-container-low);
+  border: 1px solid var(--card-border);
+  border-radius: var(--rounded-full);
+  font-size: var(--data-mono-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--on-surface);
+}
+
+.marketDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--rounded-full);
+  background-color: var(--secondary);
+}
+
+/* === KPI Cards Grid === */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.kpiValue {
+  font-size: var(--display-md-size);
+  font-weight: var(--display-md-weight);
+  letter-spacing: var(--display-md-spacing);
+  color: var(--on-surface);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  margin-bottom: var(--space-xs);
+}
+
+.kpiChange {
+  font-size: var(--data-mono-size);
+  font-weight: var(--font-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpiUp {
+  color: var(--gain);
+}
+
+.kpiDown {
+  color: var(--loss);
+}
+
+.kpiLabel {
+  color: var(--on-surface-variant);
+  font-size: var(--body-md-size);
+}
+
+.sparkline {
+  margin-top: var(--space-sm);
+  height: 4px;
+  background-color: var(--surface-container-high);
+  border-radius: var(--rounded-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.sparklineFill {
+  height: 100%;
+  border-radius: var(--rounded-full);
+  transition: width var(--transition-slow);
+}
+
+/* === Charts Section === */
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.chartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.chartTitle {
+  font-size: var(--label-caps-size);
+  font-weight: var(--label-caps-weight);
+  letter-spacing: var(--label-caps-spacing);
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+.chartSubtitle {
+  color: var(--outline);
+  font-size: var(--body-md-size);
+  margin-top: var(--space-xs);
+}
+
+.periodTabs {
+  display: flex;
+  gap: 2px;
+  background-color: var(--surface-container-low);
+  border-radius: var(--rounded);
+  padding: 2px;
+}
+
+.periodTab {
+  padding: 6px 12px;
+  font-size: var(--data-mono-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--outline);
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+}
+
+.periodTab:hover {
+  color: var(--on-surface-variant);
+}
+
+.periodTabActive {
+  composes: periodTab;
+  background-color: var(--surface-container-high);
+  color: var(--on-surface);
+}
+
+/* === Donut Chart === */
+.donutCenter {
+  text-align: center;
+}
+
+.donutValue {
+  font-size: var(--display-md-size);
+  font-weight: var(--display-md-weight);
+  color: var(--on-surface);
+}
+
+.donutLabel {
+  font-size: var(--body-md-size);
+  color: var(--outline);
+}
+
+.legendList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  margin-top: var(--space-md);
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-size: var(--body-md-size);
+}
+
+.legendDot {
+  display: none;
+}
+
+.legendName {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: var(--data-mono-size);
+}
+
+.legendValue {
+  color: var(--on-surface-variant);
+  font-variant-numeric: tabular-nums;
+}
+
+/* === Recent Activity === */
+.activityHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.viewAllBtn {
+  font-size: var(--data-mono-size);
+  color: var(--primary);
+  font-weight: var(--font-weight-medium);
+  transition: opacity var(--transition-fast);
+}
+
+.viewAllBtn:hover {
+  opacity: 0.8;
+}
+
+.paginationWrapper {
+  margin-top: var(--space-md);
+  border-top: 1px solid var(--card-border);
+  padding-top: var(--space-md);
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.activityRow:last-child {
+  border-bottom: none;
+}
+
+.activityInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityUser {
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--on-surface);
+}
+
+.activityDesc {
+  font-size: var(--data-mono-size);
+  color: var(--on-surface-variant);
+}
+
+.activityTime {
+  font-size: var(--data-mono-size);
+  color: var(--outline);
+  white-space: nowrap;
+}
+
+/* === Responsive === */
+@media (max-width: 1200px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pageHeader {
+    flex-direction: column;
+  }
+}

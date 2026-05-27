@@ -1,0 +1,131 @@
+.tableContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tableWrapper {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Headers */
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+  column-gap: 16px;
+  padding: 16px 24px;
+  background-color: var(--surface-container-high);
+  border-bottom: 1px solid var(--card-border);
+  font-size: var(--label-caps-size);
+  font-weight: var(--label-caps-weight);
+  color: var(--outline);
+  text-transform: uppercase;
+  letter-spacing: var(--label-caps-spacing);
+  align-items: center;
+}
+
+.headerItem {
+  text-align: center;
+}
+
+.headerItem:first-child {
+  text-align: left;
+}
+
+/* Rows */
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+  column-gap: 16px;
+  padding: 16px 24px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid var(--card-border);
+  align-items: center;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableRow:hover {
+  background-color: var(--row-hover);
+}
+
+/* Cells */
+.cellCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Client Info Cell */
+.clientInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+  background-color: var(--surface-container-highest);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--label-caps-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--on-surface);
+  flex-shrink: 0;
+}
+
+.clientDetails {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.clientName {
+  font-size: var(--body-md-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Cell Utilities */
+.cellText {
+  font-size: var(--data-mono-size);
+  color: var(--on-surface);
+  font-weight: var(--data-mono-weight);
+}
+
+.cellId {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--outline-variant);
+}
+
+.positive {
+  color: var(--gain);
+}
+
+.negative {
+  color: var(--loss);
+}
+
+.neutral {
+  color: var(--outline);
+}

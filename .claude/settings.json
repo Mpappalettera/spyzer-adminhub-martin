@@ -1,0 +1,55 @@
+{
+  "mcpServers": {
+    "stitch": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-stitch"],
+      "env": {
+        "STITCH_API_KEY": "AQ.Ab8RN6KauI9fifO3WLx5537x73PWGzkYWUYFqMkyWLB26jfQ7w"
+      }
+    }
+  },
+  "permissions": {
+    "defaultMode": "plan",
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Stitch:*",
+      "Bash(cd frontend && npm run dev)",
+      "Bash(cd frontend && npm run lint)",
+      "Bash(cd frontend && npm run format)",
+      "Bash(cd frontend && npx vitest:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch)",
+      "Bash(cat:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git merge:*)",
+      "Bash(npm publish:*)",
+      "Write(backend/**)",
+      "Edit(backend/**)",
+      "Write(README.md)",
+      "Edit(README.md)",
+      "Write(docker*)",
+      "Edit(docker*)",
+      "Write(.github/**)",
+      "Edit(.github/**)"
+    ],
+    "ask": [
+      "Bash(cd frontend && npm install:*)",
+      "Bash(cd frontend && npm uninstall:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Write(frontend/package.json)",
+      "Edit(frontend/package.json)",
+      "Write(frontend/vite.config.js)",
+      "Edit(frontend/vite.config.js)"
+    ]
+  }
+}
