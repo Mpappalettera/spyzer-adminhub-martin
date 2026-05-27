@@ -71,6 +71,12 @@ public class DataSeeder implements CommandLineRunner {
             log.info("Admin base sembrado con éxito.");
         }
 
+        // 🔒 EL CANDADO GLOBAL IDEAL: Si ya hay usuarios en la BD, frena acá mismo y no lee el JSON
+        if (usuarioRepository.count() > 0) {
+            log.info("La base de datos ya tiene los datos del JSON cargados. Omitiendo el Seeder.");
+            return; // <-- Corta la ejecución del método por completo
+        }
+
         // 2. Cargar el recurso JSON desde el classpath (Resources)
         ClassPathResource jsonResource = new ClassPathResource("crm-export.json");
         if (!jsonResource.exists()) {
