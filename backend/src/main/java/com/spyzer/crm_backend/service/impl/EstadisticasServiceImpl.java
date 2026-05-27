@@ -136,9 +136,19 @@ public class EstadisticasServiceImpl implements EstadisticasService {
                 ? BigDecimal.valueOf(promedio).setScale(2, RoundingMode.HALF_UP)
                 : BigDecimal.ZERO;
 
+        Map<String, String> equivalenciasIngles = Map.of(
+                "POSITIVO", "Positive",
+                "NEGATIVO", "Negative",
+                "NEUTRO", "Neutral"
+        );
+
         Map<String, Long> desglose = new LinkedHashMap<>();
         for (String sentimiento : List.of("POSITIVO", "NEGATIVO", "NEUTRO")) {
-            desglose.put(sentimiento, reviewAppRepository.countBySentimientoIa(sentimiento));
+            long count = reviewAppRepository.countBySentimientoIa(sentimiento);
+            if (count == 0) {
+                count = reviewAppRepository.countBySentimientoIa(equivalenciasIngles.get(sentimiento));
+            }
+            desglose.put(sentimiento, count);
         }
 
         long totalReviews = desglose.values().stream().mapToLong(Long::longValue).sum();
