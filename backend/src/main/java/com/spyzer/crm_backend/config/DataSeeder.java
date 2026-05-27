@@ -58,18 +58,20 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-         if (administradorRepository.count() > 0) {
-             return;
-         }
-
-        administradorRepository.save(Administrador.builder()
-                .nombre("Admin")
-                .apellido("Spyzer")
-                .email("admin@spyzer.com")
-                .passwordHash(passwordEncoder.encode("admin"))
-                .rol("ADMIN")
-                .fechaCreacion(LocalDateTime.now())
-                .build());
+        // Crear admin solo si aún no existe (evita violación de UNIQUE en re-arranques).
+        if (administradorRepository.findByEmail("admin@spyzer.com").isEmpty()) {
+            administradorRepository.save(Administrador.builder()
+                    .nombre("Admin")
+                    .apellido("Spyzer")
+                    .email("admin@spyzer.com")
+                    .passwordHash(passwordEncoder.encode("admin"))
+                    .rol("ADMIN")
+                    .fechaCreacion(LocalDateTime.now())
+                    .build());
+            log.info("Admin sembrado.");
+        } else {
+            log.info("Admin ya existe; omitiendo creación.");
+        }
 
         ClassPathResource jsonResource = new ClassPathResource("crm-export.json");
         if (!jsonResource.exists()) {
@@ -103,15 +105,17 @@ public class DataSeeder implements CommandLineRunner {
                         fechaRegistro = LocalDateTime.now();
                     }
 
-                    Usuario usuario = Usuario.builder()
-                            .nombre(nombre)
-                            .apellido(apellido)
-                            .email(email)
-                            .fechaRegistro(fechaRegistro)
-                            .ultimaConexion(fechaRegistro)
-                            .build();
-
-                    Usuario saved = usuarioRepository.save(usuario);
+                    Usuario saved = usuarioRepository.findByEmail(email).orElse(null);
+                    if (saved == null) {
+                        Usuario usuario = Usuario.builder()
+                                .nombre(nombre)
+                                .apellido(apellido)
+                                .email(email)
+                                .fechaRegistro(fechaRegistro)
+                                .ultimaConexion(fechaRegistro)
+                                .build();
+                        saved = usuarioRepository.save(usuario);
+                    }
                     usuariosMap.put(externalId, saved);
                     usuariosGuardados.add(saved);
                 }
