@@ -1,0 +1,2288 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocISRoRQ-SJTcPmfBSvXTx35uLMwOzuzZU66dhe4J-oDgyLQZo7H=s96-c",
+      "balance_actual": "658.35",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-03T19:47:50.407Z",
+      "email": "miguelmelgarejosanchezz@gmail.com",
+      "google_id": "104914955988921167146",
+      "name": "Miguel Melgarejo"
+    },
+    {
+      "id": 2,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKw8J7KMLCS3IRn7vh3LJX3rk4AsawC9dZX_zyXiaASY1FTaA=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-03T19:48:00.996Z",
+      "email": "vichael2.0@gmail.com",
+      "google_id": "111776087345579770245",
+      "name": "Miguel Sanchez"
+    },
+    {
+      "id": 3,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJhiG3rl45v8MTbhHsKZrIn4VaoRqkq-PNtb1EI1m3k-p-2GQ=s96-c",
+      "balance_actual": "38980.86",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-04T15:07:21.740Z",
+      "email": "l.meili@hispeed.ch",
+      "google_id": "100662204794889691127",
+      "name": "Livia Meili"
+    },
+    {
+      "id": 4,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI1z5MsiNiMpcw9jkI2x8I338rOxOVwTr7N2v4G7Ydul4UwWw=s96-c",
+      "balance_actual": "2901.59",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-04T17:42:18.273Z",
+      "email": "dineropero281@gmail.com",
+      "google_id": "111675606181368624251",
+      "name": "Pero Dinero"
+    },
+    {
+      "id": 5,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJp5pPG49Jy0pPNa2EvVK68UT1btiFtuvvoZup-BzEclJ4GVmg=s96-c",
+      "balance_actual": "104.26",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-04T18:50:15.595Z",
+      "email": "javiermelgarejo@live.com",
+      "google_id": "117156786933521792833",
+      "name": "Javi Melgarejo"
+    },
+    {
+      "id": 6,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJltpwLjYimbiwZ8ZCM-ubJtrlwomTEkx6aTzzvv6r8RohL2udN=s96-c",
+      "balance_actual": "45411.27",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-06T12:11:19.995Z",
+      "email": "alejsndrohoyos@gmail.com",
+      "google_id": "104724895078330563554",
+      "name": "tuhalex_ RL"
+    },
+    {
+      "id": 7,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocINtQnCrM_vS2TF1QK-Y0cfTdQuG7o4qV5BZE6T6UsWfDhw6Q=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-06T17:36:35.311Z",
+      "email": "rafaelsepulvedalobera1@gmail.com",
+      "google_id": "105079055846634350117",
+      "name": "Rafael Sepulveda Lobera"
+    },
+    {
+      "id": 8,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI2oVHtS5ckpOBNFctD55z-e8CfJyATTgtzr8s8dqQ8pNO40sY=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-08T16:58:25.704Z",
+      "email": "julitobravito2002@gmail.com",
+      "google_id": "101688531504142201300",
+      "name": "julio bravo"
+    },
+    {
+      "id": 9,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI36WtwwczRsL9usj52uloXsUDa_8BhzZXHl76fdraNNXTSuA=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-08T17:43:37.412Z",
+      "email": "alejandroluceena@gmail.com",
+      "google_id": "102774068920251940137",
+      "name": "Alejandro Lucena"
+    },
+    {
+      "id": 10,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJnT2Jmb9WMjnxIQKOVbRNbwRs1AxnkoTxV4nml3a0N7_rZozc=s96-c",
+      "balance_actual": "25355.52",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-08T18:32:14.072Z",
+      "email": "pollito4562@gmail.com",
+      "google_id": "107644246192849737240",
+      "name": "carlos martin"
+    },
+    {
+      "id": 11,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocK_PgK7Axn8DQg_DL3OIIW-3tqNpdQ_S9abvrJTomeh0TcQwQ=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-09T08:08:48.632Z",
+      "email": "manalba0007@gmail.com",
+      "google_id": "101906692723175193088",
+      "name": "Manal"
+    },
+    {
+      "id": 12,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIxqPUeLwj7VT5Hjt_mmlpfx3EMw7egtSUB5yZN_TzhZVj3KaI=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-09T08:13:37.804Z",
+      "email": "manalbelhadj07@gmail.com",
+      "google_id": "109099925834196687541",
+      "name": "Manal Belhadj"
+    },
+    {
+      "id": 13,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIGtX-8DOmkt9YFw6CZe2PwzS-boQrC1WGXCw8vz0WgkhNSqg=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-09T10:31:15.400Z",
+      "email": "mario952001@gmail.com",
+      "google_id": "102076826155805093393",
+      "name": "Mario Jimenez García"
+    },
+    {
+      "id": 16,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJFG4PdOtfhgbd2ypT-7AOoLmUN3yfARJXA7Rbv2MQJrb_BRg=s96-c",
+      "balance_actual": "27.48",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-13T12:23:07.402Z",
+      "email": "miguelmelgarejosanchez@gmail.com",
+      "google_id": "105667451364510522418",
+      "name": "Miguel M"
+    },
+    {
+      "id": 17,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKRhAtSuxkTjb--uXJf_wO6Sr1Md7h4w6BRDlgBh38nIJsrcc_e=s96-c",
+      "balance_actual": "46508.60",
+      "balance_inicial": "50000.00",
+      "created_at": "2025-12-18T20:23:40.286Z",
+      "email": "enriqueejeda43@gmail.com",
+      "google_id": "100050990420761471106",
+      "name": "Enrique Ejeda"
+    },
+    {
+      "id": 18,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIQQnb2RbaL4GXYWuGTrNl_aH3IGMupq4mEoEvsMDAg3dRANA=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2026-01-23T09:27:04.326Z",
+      "email": "bryanedu2820@gmail.com",
+      "google_id": "108878922067062179142",
+      "name": "Bryan Edward sd"
+    },
+    {
+      "id": 19,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKPfLcIgUJTQ1SdHRHj5MD2SHL1IzGkoXjbT7RqeFuNHOBOeQ=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2026-01-23T10:32:50.858Z",
+      "email": "ovasclase2@gmail.com",
+      "google_id": "102235256723502118160",
+      "name": "ovas ovas"
+    },
+    {
+      "id": 21,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJtuPr0cV3P0r7PCDdNUSZlCQM18RhX_8971rVmDUYonMNcaQ=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2026-01-25T15:35:14.020Z",
+      "email": "baenapablotr@gmail.com",
+      "google_id": "103294607460300503383",
+      "name": "Pablo"
+    },
+    {
+      "id": 22,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKKH0tN-TVtcCRyR7tSE5d8RTUkV6nQ5OAaB3k2kdLY__gK6w=s96-c",
+      "balance_actual": "50000.00",
+      "balance_inicial": "50000.00",
+      "created_at": "2026-04-10T10:56:33.789Z",
+      "email": "javimelgarejolorite@gmail.com",
+      "google_id": "115184437702266818598",
+      "name": "Javi Melgarejo"
+    },
+    {
+      "id": 24,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLLSdcdKXtvSww-UjUkGkxbWLNDbkt-j-dXPpZpy7SF14r6Fw=s96-c",
+      "balance_actual": "48691.24",
+      "balance_inicial": "50000.00",
+      "created_at": "2026-05-13T21:29:57.500Z",
+      "email": "martinpappalettera@escolapiosdegetafe.es",
+      "google_id": "105428065823427396082",
+      "name": "MARTIN PAPPALETTERA"
+    },
+    {
+      "id": 25,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI8KBqRCLJPYa1lkekJadSo_2P7-XFIuhvtVP4bUGDtXxp9SA=s96-c",
+      "balance_actual": "42565.50",
+      "balance_inicial": "50000.00",
+      "created_at": "2026-05-21T16:43:28.484Z",
+      "email": "elmuseoengetafe@gmail.com",
+      "google_id": "113943999575011510950",
+      "name": "Museo Cerveza"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "217.41",
+      "symbol": "AMD",
+      "timestamp": "2025-12-04T15:10:32.818Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 2,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "292.41",
+      "symbol": "TSM",
+      "timestamp": "2025-12-04T15:10:51.795Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 3,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "292.41",
+      "symbol": "TSM",
+      "timestamp": "2025-12-04T15:10:53.634Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 4,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "307.10",
+      "symbol": "SOXX",
+      "timestamp": "2025-12-04T15:11:00.987Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 5,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "89.51",
+      "symbol": "UBER",
+      "timestamp": "2025-12-04T15:11:20.671Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 6,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "25.51",
+      "symbol": "PFE",
+      "timestamp": "2025-12-04T15:11:41.966Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 7,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "47.44",
+      "symbol": "NVO",
+      "timestamp": "2025-12-04T15:11:58.390Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 8,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "203.65",
+      "symbol": "JNJ",
+      "timestamp": "2025-12-04T15:12:51.192Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 9,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "327.85",
+      "symbol": "V",
+      "timestamp": "2025-12-04T15:13:38.907Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 10,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "327.85",
+      "symbol": "V",
+      "timestamp": "2025-12-04T15:13:40.135Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 11,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "203.82",
+      "symbol": "NET",
+      "timestamp": "2025-12-04T15:42:55.338Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 12,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "65.47",
+      "symbol": "NKE",
+      "timestamp": "2025-12-04T15:43:30.944Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 13,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "310.69",
+      "symbol": "MCD",
+      "timestamp": "2025-12-04T15:43:38.007Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 14,
+      "cantidad": "19.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "182.62",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-04T15:43:49.895Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 15,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "217.59",
+      "symbol": "AMD",
+      "timestamp": "2025-12-04T15:43:56.728Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 16,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "217.59",
+      "symbol": "AMD",
+      "timestamp": "2025-12-04T15:44:03.495Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 17,
+      "cantidad": "20.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "316.32",
+      "symbol": "JPM",
+      "timestamp": "2025-12-04T15:44:55.215Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 18,
+      "cantidad": "50.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "71.25",
+      "symbol": "KO",
+      "timestamp": "2025-12-04T15:45:11.757Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 19,
+      "cantidad": "220.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "25.51",
+      "symbol": "PFE",
+      "timestamp": "2025-12-04T15:45:36.160Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 20,
+      "cantidad": "100.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "92.25",
+      "symbol": "COP",
+      "timestamp": "2025-12-04T15:46:33.495Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 21,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "555.83",
+      "symbol": "SPOT",
+      "timestamp": "2025-12-04T15:46:42.680Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 22,
+      "cantidad": "1.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "324.67",
+      "symbol": "V",
+      "timestamp": "2025-12-04T16:20:56.071Z",
+      "tipo": "SELL",
+      "user_id": 3
+    },
+    {
+      "id": 23,
+      "cantidad": "1.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "203.53",
+      "symbol": "JNJ",
+      "timestamp": "2025-12-04T16:21:56.106Z",
+      "tipo": "SELL",
+      "user_id": 3
+    },
+    {
+      "id": 24,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "478.71",
+      "symbol": "MSFT",
+      "timestamp": "2025-12-04T16:29:34.732Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 25,
+      "cantidad": "7.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "317.33",
+      "symbol": "GOOGL",
+      "timestamp": "2025-12-04T17:47:29.523Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 26,
+      "cantidad": "36.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "280.07",
+      "symbol": "AAPL",
+      "timestamp": "2025-12-04T17:49:05.688Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 27,
+      "cantidad": "32.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "317.33",
+      "symbol": "GOOGL",
+      "timestamp": "2025-12-04T17:49:55.369Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 28,
+      "cantidad": "55.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "183.57",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-04T17:50:39.339Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 29,
+      "cantidad": "25.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "292.12",
+      "symbol": "TSM",
+      "timestamp": "2025-12-04T17:54:52.155Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 30,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "92.25",
+      "symbol": "XLE",
+      "timestamp": "2025-12-04T18:54:34.341Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 31,
+      "cantidad": "7.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "279.19",
+      "symbol": "AAPL",
+      "timestamp": "2025-12-04T18:54:46.997Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 32,
+      "cantidad": "13.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "41.02",
+      "symbol": "INTC",
+      "timestamp": "2025-12-04T18:55:01.103Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 33,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "291.61",
+      "symbol": "TSM",
+      "timestamp": "2025-12-04T18:55:12.237Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 34,
+      "cantidad": "11.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "114.51",
+      "symbol": "WMT",
+      "timestamp": "2025-12-04T18:55:15.419Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 35,
+      "cantidad": "14.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "157.23",
+      "symbol": "BABA",
+      "timestamp": "2025-12-04T18:55:29.643Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 36,
+      "cantidad": "29.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "117.19",
+      "symbol": "XOM",
+      "timestamp": "2025-12-04T18:55:51.255Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 37,
+      "cantidad": "22.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "70.62",
+      "symbol": "KO",
+      "timestamp": "2025-12-04T18:56:06.415Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 38,
+      "cantidad": "21.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "65.71",
+      "symbol": "NKE",
+      "timestamp": "2025-12-04T18:56:18.391Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 39,
+      "cantidad": "53.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "25.69",
+      "symbol": "PFE",
+      "timestamp": "2025-12-04T18:56:50.869Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 40,
+      "cantidad": "28.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "325.39",
+      "symbol": "V",
+      "timestamp": "2025-12-04T18:57:07.755Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 41,
+      "cantidad": "33.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "291.61",
+      "symbol": "TSM",
+      "timestamp": "2025-12-04T18:57:24.082Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 42,
+      "cantidad": "42.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "327.85",
+      "symbol": "ADBE",
+      "timestamp": "2025-12-04T18:57:41.321Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 43,
+      "cantidad": "17.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "183.04",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-04T18:58:13.917Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 44,
+      "cantidad": "25.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "70.62",
+      "symbol": "KO",
+      "timestamp": "2025-12-04T19:03:30.908Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 45,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "555.19",
+      "symbol": "SPOT",
+      "timestamp": "2025-12-04T19:04:47.877Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 46,
+      "cantidad": "60.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "39.32",
+      "symbol": "FXI",
+      "timestamp": "2025-12-04T19:06:17.135Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 47,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "103.54",
+      "symbol": "NFLX",
+      "timestamp": "2025-12-04T19:25:17.728Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 48,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "105.65",
+      "symbol": "DIS",
+      "timestamp": "2025-12-04T19:25:26.102Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 49,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "555.67",
+      "symbol": "SPOT",
+      "timestamp": "2025-12-04T19:25:33.481Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 50,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "555.67",
+      "symbol": "SPOT",
+      "timestamp": "2025-12-04T19:25:35.212Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 51,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "157.48",
+      "symbol": "BABA",
+      "timestamp": "2025-12-04T19:25:53.625Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 52,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "228.92",
+      "symbol": "AMZN",
+      "timestamp": "2025-12-04T19:26:03.067Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 53,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "228.92",
+      "symbol": "AMZN",
+      "timestamp": "2025-12-04T19:26:05.075Z",
+      "tipo": "BUY",
+      "user_id": 3
+    },
+    {
+      "id": 54,
+      "cantidad": "7.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "215.68",
+      "symbol": "AMD",
+      "timestamp": "2025-12-04T20:13:24.606Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 55,
+      "cantidad": "40.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "90.43",
+      "symbol": "UBER",
+      "timestamp": "2025-12-04T20:13:52.488Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 56,
+      "cantidad": "25.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "70.54",
+      "symbol": "KO",
+      "timestamp": "2025-12-05T09:57:00.384Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 57,
+      "cantidad": "24.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "214.26",
+      "symbol": "ORCL",
+      "timestamp": "2025-12-05T09:58:09.999Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 58,
+      "cantidad": "42.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "335.33",
+      "symbol": "ADBE",
+      "timestamp": "2025-12-05T13:47:30.354Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 59,
+      "cantidad": "15.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "478.86",
+      "symbol": "DIA",
+      "timestamp": "2025-12-05T13:48:25.077Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 60,
+      "cantidad": "14.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "482.80",
+      "symbol": "MSFT",
+      "timestamp": "2025-12-05T13:48:42.829Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 61,
+      "cantidad": "33.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "300.28",
+      "symbol": "TSM",
+      "timestamp": "2025-12-05T14:26:37.132Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 62,
+      "cantidad": "86.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "82.48",
+      "symbol": "ARKK",
+      "timestamp": "2025-12-05T14:27:57.617Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 63,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "849.45",
+      "symbol": "GS",
+      "timestamp": "2025-12-05T14:28:23.217Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 64,
+      "cantidad": "26.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "39.90",
+      "symbol": "FXI",
+      "timestamp": "2025-12-05T18:08:50.981Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 65,
+      "cantidad": "28.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "332.04",
+      "symbol": "V",
+      "timestamp": "2025-12-05T18:56:14.804Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 66,
+      "cantidad": "40.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "229.74",
+      "symbol": "AMZN",
+      "timestamp": "2025-12-05T18:57:15.175Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 67,
+      "cantidad": "36.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "278.40",
+      "symbol": "AAPL",
+      "timestamp": "2025-12-06T21:37:01.524Z",
+      "tipo": "SELL",
+      "user_id": 4
+    },
+    {
+      "id": 68,
+      "cantidad": "20.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "294.43",
+      "symbol": "TSM",
+      "timestamp": "2025-12-06T21:37:39.045Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 69,
+      "cantidad": "15.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "39.89",
+      "symbol": "FXI",
+      "timestamp": "2025-12-06T21:37:50.315Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 70,
+      "cantidad": "13.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "182.16",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-06T21:38:34.124Z",
+      "tipo": "SELL",
+      "user_id": 4
+    },
+    {
+      "id": 71,
+      "cantidad": "13.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "320.67",
+      "symbol": "GOOGL",
+      "timestamp": "2025-12-06T21:38:55.572Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 72,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "863.48",
+      "symbol": "GS",
+      "timestamp": "2025-12-08T15:12:53.572Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 73,
+      "cantidad": "14.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "488.92",
+      "symbol": "MSFT",
+      "timestamp": "2025-12-08T15:13:08.822Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 74,
+      "cantidad": "30.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "170.93",
+      "symbol": "IBB",
+      "timestamp": "2025-12-08T15:14:37.698Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 75,
+      "cantidad": "27.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "183.88",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-08T15:14:57.878Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 76,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "64.81",
+      "symbol": "NKE",
+      "timestamp": "2025-12-08T15:40:20.059Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 77,
+      "cantidad": "100.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "93.72",
+      "symbol": "COP",
+      "timestamp": "2025-12-08T15:40:36.616Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 78,
+      "cantidad": "47.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "203.45",
+      "symbol": "NET",
+      "timestamp": "2025-12-08T15:41:16.686Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 79,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "226.82",
+      "symbol": "AMZN",
+      "timestamp": "2025-12-08T18:33:58.699Z",
+      "tipo": "BUY",
+      "user_id": 10
+    },
+    {
+      "id": 80,
+      "cantidad": "6.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "184.23",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-08T18:34:07.315Z",
+      "tipo": "BUY",
+      "user_id": 10
+    },
+    {
+      "id": 81,
+      "cantidad": "20.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "96.44",
+      "symbol": "NFLX",
+      "timestamp": "2025-12-08T18:34:18.892Z",
+      "tipo": "BUY",
+      "user_id": 10
+    },
+    {
+      "id": 82,
+      "cantidad": "30.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "682.54",
+      "symbol": "SPY",
+      "timestamp": "2025-12-08T18:34:46.573Z",
+      "tipo": "BUY",
+      "user_id": 10
+    },
+    {
+      "id": 83,
+      "cantidad": "28.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "205.82",
+      "symbol": "NET",
+      "timestamp": "2025-12-08T20:26:45.236Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 84,
+      "cantidad": "19.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "301.04",
+      "symbol": "TSM",
+      "timestamp": "2025-12-08T20:27:13.176Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 85,
+      "cantidad": "4.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "25.86",
+      "symbol": "PFE",
+      "timestamp": "2025-12-09T08:07:09.247Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 86,
+      "cantidad": "29.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "119.19",
+      "symbol": "XOM",
+      "timestamp": "2025-12-10T17:05:10.065Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 87,
+      "cantidad": "14.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "158.86",
+      "symbol": "BABA",
+      "timestamp": "2025-12-10T17:05:30.561Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 88,
+      "cantidad": "19.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "167.83",
+      "symbol": "IBB",
+      "timestamp": "2025-12-10T17:05:55.854Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 89,
+      "cantidad": "4.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "650.36",
+      "symbol": "META",
+      "timestamp": "2025-12-10T17:06:22.823Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 90,
+      "cantidad": "29.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "205.39",
+      "symbol": "NET",
+      "timestamp": "2025-12-11T18:04:54.872Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 91,
+      "cantidad": "60.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "39.19",
+      "symbol": "FXI",
+      "timestamp": "2025-12-11T18:05:19.089Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 92,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "312.90",
+      "symbol": "MCD",
+      "timestamp": "2025-12-11T18:05:29.177Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 93,
+      "cantidad": "8.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "218.76",
+      "symbol": "AMD",
+      "timestamp": "2025-12-11T18:05:37.832Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 94,
+      "cantidad": "7.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "312.15",
+      "symbol": "GOOGL",
+      "timestamp": "2025-12-11T18:05:52.332Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 95,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "484.79",
+      "symbol": "MSFT",
+      "timestamp": "2025-12-11T18:06:00.970Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 96,
+      "cantidad": "224.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "25.84",
+      "symbol": "PFE",
+      "timestamp": "2025-12-11T18:06:10.870Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 97,
+      "cantidad": "40.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "310.68",
+      "symbol": "SOXX",
+      "timestamp": "2025-12-11T18:07:03.882Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 98,
+      "cantidad": "41.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "310.68",
+      "symbol": "SOXX",
+      "timestamp": "2025-12-11T18:08:24.555Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 99,
+      "cantidad": "32.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "317.49",
+      "symbol": "JPM",
+      "timestamp": "2025-12-12T09:28:44.781Z",
+      "tipo": "BUY",
+      "user_id": 4
+    },
+    {
+      "id": 100,
+      "cantidad": "15.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "488.24",
+      "symbol": "DIA",
+      "timestamp": "2025-12-12T15:56:23.124Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 101,
+      "cantidad": "49.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "170.29",
+      "symbol": "IBB",
+      "timestamp": "2025-12-12T15:56:35.685Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 102,
+      "cantidad": "21.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "67.96",
+      "symbol": "NKE",
+      "timestamp": "2025-12-12T15:56:50.569Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 103,
+      "cantidad": "31.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "278.39",
+      "symbol": "AAPL",
+      "timestamp": "2025-12-12T19:32:35.653Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 104,
+      "cantidad": "30.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "77.95",
+      "symbol": "CSCO",
+      "timestamp": "2025-12-12T19:33:20.735Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 105,
+      "cantidad": "13.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "317.26",
+      "symbol": "MCD",
+      "timestamp": "2025-12-12T19:33:31.251Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 106,
+      "cantidad": "47.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "16.75",
+      "symbol": "ICLN",
+      "timestamp": "2025-12-12T19:33:48.820Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 107,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "505.33",
+      "symbol": "CRWD",
+      "timestamp": "2025-12-12T19:34:12.051Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 108,
+      "cantidad": "221.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "226.12",
+      "symbol": "AMZN",
+      "timestamp": "2025-12-13T12:23:54.402Z",
+      "tipo": "BUY",
+      "user_id": 16
+    },
+    {
+      "id": 109,
+      "cantidad": "20.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "174.57",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-18T20:25:21.667Z",
+      "tipo": "BUY",
+      "user_id": 17
+    },
+    {
+      "id": 110,
+      "cantidad": "4.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "669.32",
+      "symbol": "META",
+      "timestamp": "2025-12-20T18:10:41.223Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 111,
+      "cantidad": "16.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "172.81",
+      "symbol": "IBB",
+      "timestamp": "2025-12-22T18:00:50.958Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 112,
+      "cantidad": "44.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "188.17",
+      "symbol": "NVDA",
+      "timestamp": "2025-12-24T16:42:09.840Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 113,
+      "cantidad": "40.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "232.76",
+      "symbol": "AMZN",
+      "timestamp": "2025-12-24T16:42:21.412Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 114,
+      "cantidad": "219.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "78.03",
+      "symbol": "CSCO",
+      "timestamp": "2025-12-24T16:44:00.959Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 115,
+      "cantidad": "13.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "45.64",
+      "symbol": "INTC",
+      "timestamp": "2026-01-09T21:06:31.765Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 116,
+      "cantidad": "47.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "17.30",
+      "symbol": "ICLN",
+      "timestamp": "2026-01-09T21:06:43.125Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 117,
+      "cantidad": "3.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "694.07",
+      "symbol": "SPY",
+      "timestamp": "2026-01-10T14:18:58.519Z",
+      "tipo": "BUY",
+      "user_id": 6
+    },
+    {
+      "id": 118,
+      "cantidad": "4.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "626.63",
+      "symbol": "QQQ",
+      "timestamp": "2026-01-10T14:19:15.150Z",
+      "tipo": "BUY",
+      "user_id": 6
+    },
+    {
+      "id": 119,
+      "cantidad": "11.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "118.23",
+      "symbol": "WMT",
+      "timestamp": "2026-01-12T17:24:41.610Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 120,
+      "cantidad": "53.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "26.10",
+      "symbol": "PFE",
+      "timestamp": "2026-01-22T17:12:50.748Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 121,
+      "cantidad": "22.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "71.91",
+      "symbol": "KO",
+      "timestamp": "2026-01-22T17:12:59.851Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 122,
+      "cantidad": "16.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "177.97",
+      "symbol": "IBB",
+      "timestamp": "2026-01-22T17:13:09.569Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 124,
+      "cantidad": "35.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "255.28",
+      "symbol": "AAPL",
+      "timestamp": "2026-01-26T15:00:45.408Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 125,
+      "cantidad": "249.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "78.84",
+      "symbol": "CSCO",
+      "timestamp": "2026-01-28T20:12:07.648Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 126,
+      "cantidad": "78.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "243.66",
+      "symbol": "AMZN",
+      "timestamp": "2026-01-28T20:13:43.356Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 127,
+      "cantidad": "9.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "87.58",
+      "symbol": "TLT",
+      "timestamp": "2026-01-28T20:14:12.565Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 128,
+      "cantidad": "13.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "326.50",
+      "symbol": "MCD",
+      "timestamp": "2026-02-06T16:51:26.972Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 129,
+      "cantidad": "73.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "278.54",
+      "symbol": "AAPL",
+      "timestamp": "2026-02-06T16:51:38.692Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 130,
+      "cantidad": "116.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "211.11",
+      "symbol": "AMZN",
+      "timestamp": "2026-02-09T17:29:37.134Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 131,
+      "cantidad": "9.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "88.64",
+      "symbol": "TLT",
+      "timestamp": "2026-02-12T17:38:00.813Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 132,
+      "cantidad": "194.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "232.60",
+      "symbol": "AMZN",
+      "timestamp": "2026-04-09T19:21:52.903Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 133,
+      "cantidad": "25.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "632.32",
+      "symbol": "META",
+      "timestamp": "2026-04-13T17:08:07.350Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 134,
+      "cantidad": "25.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "632.32",
+      "symbol": "META",
+      "timestamp": "2026-04-13T17:08:09.504Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 135,
+      "cantidad": "46.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "188.59",
+      "symbol": "NVDA",
+      "timestamp": "2026-04-13T17:08:27.491Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 136,
+      "cantidad": "18.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "311.13",
+      "symbol": "JPM",
+      "timestamp": "2026-04-13T17:09:04.666Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 137,
+      "cantidad": "46.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "202.14",
+      "symbol": "NVDA",
+      "timestamp": "2026-04-23T03:22:00.980Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 138,
+      "cantidad": "50.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "675.34",
+      "symbol": "META",
+      "timestamp": "2026-04-23T03:22:11.178Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 139,
+      "cantidad": "50.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "154.39",
+      "symbol": "XOM",
+      "timestamp": "2026-04-30T03:21:57.239Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 140,
+      "cantidad": "86.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "26.68",
+      "symbol": "CMCSA",
+      "timestamp": "2026-04-30T03:22:25.353Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 141,
+      "cantidad": "58.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "262.31",
+      "symbol": "AMZN",
+      "timestamp": "2026-04-30T03:22:46.373Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 142,
+      "cantidad": "42.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "336.01",
+      "symbol": "V",
+      "timestamp": "2026-04-30T03:23:06.761Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 143,
+      "cantidad": "17.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "209.07",
+      "symbol": "NVDA",
+      "timestamp": "2026-04-30T03:23:48.322Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 144,
+      "cantidad": "58.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "273.76",
+      "symbol": "AMZN",
+      "timestamp": "2026-05-05T18:08:19.307Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 145,
+      "cantidad": "23.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "681.53",
+      "symbol": "QQQ",
+      "timestamp": "2026-05-06T10:49:45.190Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 146,
+      "cantidad": "17.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "215.09",
+      "symbol": "NVDA",
+      "timestamp": "2026-05-08T16:17:07.732Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 147,
+      "cantidad": "23.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "709.37",
+      "symbol": "QQQ",
+      "timestamp": "2026-05-08T16:17:24.601Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 148,
+      "cantidad": "60.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "529.55",
+      "symbol": "SOXX",
+      "timestamp": "2026-05-11T19:03:14.546Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 149,
+      "cantidad": "16.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "404.89",
+      "symbol": "TSM",
+      "timestamp": "2026-05-11T19:03:39.021Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 150,
+      "cantidad": "14.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "219.20",
+      "symbol": "NVDA",
+      "timestamp": "2026-05-11T19:04:01.034Z",
+      "tipo": "SELL",
+      "user_id": 1
+    },
+    {
+      "id": 151,
+      "cantidad": "57.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "713.37",
+      "symbol": "QQQ",
+      "timestamp": "2026-05-11T19:04:59.201Z",
+      "tipo": "BUY",
+      "user_id": 1
+    },
+    {
+      "id": 152,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "545.76",
+      "symbol": "CRWD",
+      "timestamp": "2026-05-12T14:15:01.180Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 153,
+      "cantidad": "35.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "130.27",
+      "symbol": "WMT",
+      "timestamp": "2026-05-12T14:15:45.437Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 154,
+      "cantidad": "645.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "25.88",
+      "symbol": "PFE",
+      "timestamp": "2026-05-12T14:16:45.566Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 155,
+      "cantidad": "1.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "270.28",
+      "symbol": "AMZN",
+      "timestamp": "2026-05-13T21:47:32.622Z",
+      "tipo": "BUY",
+      "user_id": 24
+    },
+    {
+      "id": 156,
+      "cantidad": "2.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "38.25",
+      "symbol": "FXI",
+      "timestamp": "2026-05-13T21:48:15.847Z",
+      "tipo": "BUY",
+      "user_id": 24
+    },
+    {
+      "id": 157,
+      "cantidad": "5.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "44.74",
+      "symbol": "DAX",
+      "timestamp": "2026-05-13T21:49:03.343Z",
+      "tipo": "BUY",
+      "user_id": 24
+    },
+    {
+      "id": 158,
+      "cantidad": "50.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "160.94",
+      "symbol": "XOM",
+      "timestamp": "2026-05-18T15:54:01.657Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 159,
+      "cantidad": "35.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "132.33",
+      "symbol": "WMT",
+      "timestamp": "2026-05-18T15:54:11.651Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 160,
+      "cantidad": "306.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "42.59",
+      "symbol": "NKE",
+      "timestamp": "2026-05-18T15:55:24.466Z",
+      "tipo": "BUY",
+      "user_id": 5
+    },
+    {
+      "id": 161,
+      "cantidad": "1.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "738.28",
+      "symbol": "SPY",
+      "timestamp": "2026-05-21T13:10:10.123Z",
+      "tipo": "BUY",
+      "user_id": 24
+    },
+    {
+      "id": 162,
+      "cantidad": "10.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "743.45",
+      "symbol": "SPY",
+      "timestamp": "2026-05-21T16:44:00.752Z",
+      "tipo": "BUY",
+      "user_id": 25
+    },
+    {
+      "id": 163,
+      "cantidad": "306.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "44.57",
+      "symbol": "NKE",
+      "timestamp": "2026-05-22T13:48:05.540Z",
+      "tipo": "SELL",
+      "user_id": 5
+    },
+    {
+      "id": 164,
+      "cantidad": "522.000000",
+      "ejecutada_por": "MANUAL",
+      "precio": "25.97",
+      "symbol": "PFE",
+      "timestamp": "2026-05-22T13:49:12.292Z",
+      "tipo": "BUY",
+      "user_id": 5
+    }
+  ],
+  "portfolio": [
+    {
+      "id": 1,
+      "cantidad": "2.000000",
+      "ganancia_perdida": "499.90",
+      "precio_actual": "467.36",
+      "precio_promedio": "217.41",
+      "symbol": "AMD",
+      "valor_mercado": "934.72",
+      "user_id": 3
+    },
+    {
+      "id": 2,
+      "cantidad": "10.000000",
+      "ganancia_perdida": "1119.20",
+      "precio_actual": "404.33",
+      "precio_promedio": "292.41",
+      "symbol": "TSM",
+      "valor_mercado": "4043.30",
+      "user_id": 3
+    },
+    {
+      "id": 3,
+      "cantidad": "2.000000",
+      "ganancia_perdida": "462.16",
+      "precio_actual": "538.18",
+      "precio_promedio": "307.10",
+      "symbol": "SOXX",
+      "valor_mercado": "1076.36",
+      "user_id": 3
+    },
+    {
+      "id": 4,
+      "cantidad": "2.000000",
+      "ganancia_perdida": "-35.08",
+      "precio_actual": "71.97",
+      "precio_promedio": "89.51",
+      "symbol": "UBER",
+      "valor_mercado": "143.94",
+      "user_id": 3
+    },
+    {
+      "id": 5,
+      "cantidad": "3.000000",
+      "ganancia_perdida": "1.44",
+      "precio_actual": "25.99",
+      "precio_promedio": "25.51",
+      "symbol": "PFE",
+      "valor_mercado": "77.97",
+      "user_id": 3
+    },
+    {
+      "id": 6,
+      "cantidad": "3.000000",
+      "ganancia_perdida": "-7.80",
+      "precio_actual": "44.84",
+      "precio_promedio": "47.44",
+      "symbol": "NVO",
+      "valor_mercado": "134.52",
+      "user_id": 3
+    },
+    {
+      "id": 7,
+      "cantidad": "1.000000",
+      "ganancia_perdida": "30.97",
+      "precio_actual": "234.62",
+      "precio_promedio": "203.65",
+      "symbol": "JNJ",
+      "valor_mercado": "234.62",
+      "user_id": 3
+    },
+    {
+      "id": 8,
+      "cantidad": "5.000000",
+      "ganancia_perdida": "5.20",
+      "precio_actual": "328.89",
+      "precio_promedio": "327.85",
+      "symbol": "V",
+      "valor_mercado": "1644.45",
+      "user_id": 3
+    },
+    {
+      "id": 12,
+      "cantidad": "5.000000",
+      "ganancia_perdida": "163.20",
+      "precio_actual": "215.26",
+      "precio_promedio": "182.62",
+      "symbol": "NVDA",
+      "valor_mercado": "1076.30",
+      "user_id": 1
+    },
+    {
+      "id": 14,
+      "cantidad": "20.000000",
+      "ganancia_perdida": "-199.60",
+      "precio_actual": "306.34",
+      "precio_promedio": "316.32",
+      "symbol": "JPM",
+      "valor_mercado": "6126.80",
+      "user_id": 1
+    },
+    {
+      "id": 22,
+      "cantidad": "45.000000",
+      "ganancia_perdida": "2906.55",
+      "precio_actual": "382.88",
+      "precio_promedio": "318.29",
+      "symbol": "GOOGL",
+      "valor_mercado": "17229.60",
+      "user_id": 4
+    },
+    {
+      "id": 23,
+      "cantidad": "42.000000",
+      "ganancia_perdida": "1330.98",
+      "precio_actual": "215.26",
+      "precio_promedio": "183.57",
+      "symbol": "NVDA",
+      "valor_mercado": "9040.92",
+      "user_id": 4
+    },
+    {
+      "id": 24,
+      "cantidad": "45.000000",
+      "ganancia_perdida": "5003.10",
+      "precio_actual": "404.33",
+      "precio_promedio": "293.15",
+      "symbol": "TSM",
+      "valor_mercado": "18194.85",
+      "user_id": 4
+    },
+    {
+      "id": 25,
+      "cantidad": "5.000000",
+      "ganancia_perdida": "-163.80",
+      "precio_actual": "59.49",
+      "precio_promedio": "92.25",
+      "symbol": "XLE",
+      "valor_mercado": "297.45",
+      "user_id": 5
+    },
+    {
+      "id": 28,
+      "cantidad": "6.000000",
+      "ganancia_perdida": "627.48",
+      "precio_actual": "404.33",
+      "precio_promedio": "299.75",
+      "symbol": "TSM",
+      "valor_mercado": "2425.98",
+      "user_id": 1
+    },
+    {
+      "id": 40,
+      "cantidad": "2.000000",
+      "ganancia_perdida": "-29.88",
+      "precio_actual": "88.60",
+      "precio_promedio": "103.54",
+      "symbol": "NFLX",
+      "valor_mercado": "177.20",
+      "user_id": 3
+    },
+    {
+      "id": 41,
+      "cantidad": "2.000000",
+      "ganancia_perdida": "-4.46",
+      "precio_actual": "103.42",
+      "precio_promedio": "105.65",
+      "symbol": "DIS",
+      "valor_mercado": "206.84",
+      "user_id": 3
+    },
+    {
+      "id": 42,
+      "cantidad": "4.000000",
+      "ganancia_perdida": "-143.72",
+      "precio_actual": "519.74",
+      "precio_promedio": "555.67",
+      "symbol": "SPOT",
+      "valor_mercado": "2078.96",
+      "user_id": 3
+    },
+    {
+      "id": 43,
+      "cantidad": "5.000000",
+      "ganancia_perdida": "-137.35",
+      "precio_actual": "130.01",
+      "precio_promedio": "157.48",
+      "symbol": "BABA",
+      "valor_mercado": "650.05",
+      "user_id": 3
+    },
+    {
+      "id": 44,
+      "cantidad": "6.000000",
+      "ganancia_perdida": "228.18",
+      "precio_actual": "266.95",
+      "precio_promedio": "228.92",
+      "symbol": "AMZN",
+      "valor_mercado": "1601.70",
+      "user_id": 3
+    },
+    {
+      "id": 45,
+      "cantidad": "40.000000",
+      "ganancia_perdida": "-738.40",
+      "precio_actual": "71.97",
+      "precio_promedio": "90.43",
+      "symbol": "UBER",
+      "valor_mercado": "2878.80",
+      "user_id": 1
+    },
+    {
+      "id": 46,
+      "cantidad": "24.000000",
+      "ganancia_perdida": "-532.08",
+      "precio_actual": "192.09",
+      "precio_promedio": "214.26",
+      "symbol": "ORCL",
+      "valor_mercado": "4610.16",
+      "user_id": 1
+    },
+    {
+      "id": 49,
+      "cantidad": "86.000000",
+      "ganancia_perdida": "-518.58",
+      "precio_actual": "76.45",
+      "precio_promedio": "82.48",
+      "symbol": "ARKK",
+      "valor_mercado": "6574.70",
+      "user_id": 5
+    },
+    {
+      "id": 51,
+      "cantidad": "41.000000",
+      "ganancia_perdida": "-180.40",
+      "precio_actual": "35.50",
+      "precio_promedio": "39.90",
+      "symbol": "FXI",
+      "valor_mercado": "1455.50",
+      "user_id": 4
+    },
+    {
+      "id": 54,
+      "cantidad": "5.000000",
+      "ganancia_perdida": "200.65",
+      "precio_actual": "266.95",
+      "precio_promedio": "226.82",
+      "symbol": "AMZN",
+      "valor_mercado": "1334.75",
+      "user_id": 10
+    },
+    {
+      "id": 55,
+      "cantidad": "6.000000",
+      "ganancia_perdida": "186.18",
+      "precio_actual": "215.26",
+      "precio_promedio": "184.23",
+      "symbol": "NVDA",
+      "valor_mercado": "1291.56",
+      "user_id": 10
+    },
+    {
+      "id": 56,
+      "cantidad": "20.000000",
+      "ganancia_perdida": "-156.80",
+      "precio_actual": "88.60",
+      "precio_promedio": "96.44",
+      "symbol": "NFLX",
+      "valor_mercado": "1772.00",
+      "user_id": 10
+    },
+    {
+      "id": 57,
+      "cantidad": "30.000000",
+      "ganancia_perdida": "1877.70",
+      "precio_actual": "745.13",
+      "precio_promedio": "682.54",
+      "symbol": "SPY",
+      "valor_mercado": "22353.90",
+      "user_id": 10
+    },
+    {
+      "id": 59,
+      "cantidad": "21.000000",
+      "ganancia_perdida": "4777.50",
+      "precio_actual": "538.18",
+      "precio_promedio": "310.68",
+      "symbol": "SOXX",
+      "valor_mercado": "11301.78",
+      "user_id": 1
+    },
+    {
+      "id": 60,
+      "cantidad": "32.000000",
+      "ganancia_perdida": "-356.80",
+      "precio_actual": "306.34",
+      "precio_promedio": "317.49",
+      "symbol": "JPM",
+      "valor_mercado": "9802.88",
+      "user_id": 4
+    },
+    {
+      "id": 65,
+      "cantidad": "221.000000",
+      "ganancia_perdida": "9023.43",
+      "precio_actual": "266.95",
+      "precio_promedio": "226.12",
+      "symbol": "AMZN",
+      "valor_mercado": "58995.95",
+      "user_id": 16
+    },
+    {
+      "id": 66,
+      "cantidad": "20.000000",
+      "ganancia_perdida": "813.80",
+      "precio_actual": "215.26",
+      "precio_promedio": "174.57",
+      "symbol": "NVDA",
+      "valor_mercado": "4305.20",
+      "user_id": 17
+    },
+    {
+      "id": 68,
+      "cantidad": "3.000000",
+      "ganancia_perdida": "153.18",
+      "precio_actual": "745.13",
+      "precio_promedio": "694.07",
+      "symbol": "SPY",
+      "valor_mercado": "2235.39",
+      "user_id": 6
+    },
+    {
+      "id": 69,
+      "cantidad": "4.000000",
+      "ganancia_perdida": "361.88",
+      "precio_actual": "717.10",
+      "precio_promedio": "626.63",
+      "symbol": "QQQ",
+      "valor_mercado": "2868.40",
+      "user_id": 6
+    },
+    {
+      "id": 75,
+      "cantidad": "18.000000",
+      "ganancia_perdida": "-86.22",
+      "precio_actual": "306.34",
+      "precio_promedio": "311.13",
+      "symbol": "JPM",
+      "valor_mercado": "5514.12",
+      "user_id": 5
+    },
+    {
+      "id": 77,
+      "cantidad": "86.000000",
+      "ganancia_perdida": "-134.16",
+      "precio_actual": "25.12",
+      "precio_promedio": "26.68",
+      "symbol": "CMCSA",
+      "valor_mercado": "2160.32",
+      "user_id": 5
+    },
+    {
+      "id": 79,
+      "cantidad": "42.000000",
+      "ganancia_perdida": "-299.04",
+      "precio_actual": "328.89",
+      "precio_promedio": "336.01",
+      "symbol": "V",
+      "valor_mercado": "13813.38",
+      "user_id": 5
+    },
+    {
+      "id": 82,
+      "cantidad": "57.000000",
+      "ganancia_perdida": "212.61",
+      "precio_actual": "717.10",
+      "precio_promedio": "713.37",
+      "symbol": "QQQ",
+      "valor_mercado": "40874.70",
+      "user_id": 1
+    },
+    {
+      "id": 84,
+      "cantidad": "1167.000000",
+      "ganancia_perdida": "81.69",
+      "precio_actual": "25.99",
+      "precio_promedio": "25.92",
+      "symbol": "PFE",
+      "valor_mercado": "30330.33",
+      "user_id": 5
+    },
+    {
+      "id": 85,
+      "cantidad": "1.000000",
+      "ganancia_perdida": "-3.33",
+      "precio_actual": "266.95",
+      "precio_promedio": "270.28",
+      "symbol": "AMZN",
+      "valor_mercado": "266.95",
+      "user_id": 24
+    },
+    {
+      "id": 86,
+      "cantidad": "2.000000",
+      "ganancia_perdida": "-5.50",
+      "precio_actual": "35.50",
+      "precio_promedio": "38.25",
+      "symbol": "FXI",
+      "valor_mercado": "71.00",
+      "user_id": 24
+    },
+    {
+      "id": 87,
+      "cantidad": "5.000000",
+      "ganancia_perdida": "3.70",
+      "precio_actual": "45.48",
+      "precio_promedio": "44.74",
+      "symbol": "DAX",
+      "valor_mercado": "227.40",
+      "user_id": 24
+    },
+    {
+      "id": 89,
+      "cantidad": "1.000000",
+      "ganancia_perdida": "6.85",
+      "precio_actual": "745.13",
+      "precio_promedio": "738.28",
+      "symbol": "SPY",
+      "valor_mercado": "745.13",
+      "user_id": 24
+    },
+    {
+      "id": 90,
+      "cantidad": "10.000000",
+      "ganancia_perdida": "16.80",
+      "precio_actual": "745.13",
+      "precio_promedio": "743.45",
+      "symbol": "SPY",
+      "valor_mercado": "7451.30",
+      "user_id": 25
+    }
+  ]
+}

@@ -13,10 +13,11 @@ import com.spyzer.crm_backend.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
@@ -57,9 +58,10 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if (administradorRepository.count() > 0) {
-            return;
-        }
+        // Candado deshabilitado temporalmente para forzar la siembra en producción.
+        // if (administradorRepository.count() > 0) {
+        //     return;
+        // }
 
         administradorRepository.save(Administrador.builder()
                 .nombre("Admin")
@@ -70,16 +72,15 @@ public class DataSeeder implements CommandLineRunner {
                 .fechaCreacion(LocalDateTime.now())
                 .build());
 
-        File jsonFile = new File("crm-export.json");
-        if (!jsonFile.exists()) {
-            log.warn("crm-export.json no encontrado en {}. Omitiendo importación de datos reales.",
-                    jsonFile.getAbsolutePath());
+        ClassPathResource jsonResource = new ClassPathResource("crm-export.json");
+        if (!jsonResource.exists()) {
+            log.warn("crm-export.json no encontrado en el classpath. Omitiendo importación de datos reales.");
             return;
         }
 
-        try {
+        try (InputStream jsonStream = jsonResource.getInputStream()) {
             ObjectMapper mapper = new ObjectMapper();
-            JsonNode root = mapper.readTree(jsonFile);
+            JsonNode root = mapper.readTree(jsonStream);
             JsonNode usersNode = root.get("users");
             JsonNode transactionsNode = root.get("transactions");
 
